@@ -15,7 +15,7 @@ const BannerImage = ({ image, imageAlt, duration = 300 }: BannerImageProps) => {
     } as React.CSSProperties;
 
     return (
-        <Image style={loaderStyle}
+        <Image style={loaderStyle} priority={true}
             className={`w-48 absolute ${styles.fade}`}
             src={image} alt={imageAlt} />
     )

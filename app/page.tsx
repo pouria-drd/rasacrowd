@@ -1,6 +1,6 @@
+import Banner from "./components/banners/Banner";
 import Supporters from "./components/Supporters";
 import SurveyLinkCard from "./components/SurveyLinkCard";
-import Banner from "./components/banners/Banner";
 
 function Home() {
   return (
@@ -22,3 +22,50 @@ function Home() {
 }
 
 export default Home
+
+// 'use client'
+// import { useState, useEffect } from "react";
+// const [data, setData] = useState([]);
+// const [newItem, setNewItem] = useState({ name: '', description: '' });
+
+// const fetchData = async () => {
+//   const response = await fetch('http://localhost:3000/api/example');
+//   const result = await response.json();
+//   setData(result.data);
+
+//   console.log(response);
+// };
+
+// const handleAddItem = async () => {
+//   await fetch('http://localhost:3000/api/example', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify(newItem),
+//   });
+
+//   // Fetch data again after adding a new item
+//   fetchData();
+// };
+
+// useEffect(() => {
+//   fetchData();
+// }, []);
+
+// <div>
+// <h2>Add New Item</h2>
+// <input
+//   type="text"
+//   placeholder="Name"
+//   value={newItem.name}
+//   onChange={(e) => setNewItem({ ...newItem, name: e.target.value })}
+// />
+// <input
+//   type="text"
+//   placeholder="Description"
+//   value={newItem.description}
+//   onChange={(e) => setNewItem({ ...newItem, description: e.target.value })}
+// />
+// <button onClick={handleAddItem}>Add Item</button>
+// </div>
