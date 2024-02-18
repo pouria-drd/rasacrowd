@@ -10,7 +10,7 @@ const Navbar = () => {
     const router = usePathname();
 
     return (
-        <nav className="fixed bg-white font-vazir text-sm text-gray-800
+        <nav className="fixed z-[1000] bg-white font-vazir text-sm text-gray-800
          left-0 shadow-sm
         w-full py-4">
 

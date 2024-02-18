@@ -1,0 +1,12 @@
+.fade {
+  animation: fadeIn var(--fade-duration, 300ms) ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -140,3 +140,7 @@
 .active {
   @apply border-b border-rasa-blue-400;
 }
+
+body {
+  @apply bg-rasa-green-400;
+}

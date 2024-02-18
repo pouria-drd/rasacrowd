@@ -1,9 +1,12 @@
 import Supporters from "./components/Supporters";
 import SurveyLinkCard from "./components/SurveyLinkCard";
+import Banner from "./components/banners/Banner";
 
 function Home() {
   return (
     <main className="flex flex-col gap-4 w-full">
+      <Banner />
+
       <SurveyLinkCard title="پرسشنامه فردی" badgeColor="green"
         text="افرادی که ایده ای را راه اندازی کرده یا قصد راه اندازی آن را دارند." />
 

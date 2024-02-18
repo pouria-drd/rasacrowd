@@ -21,13 +21,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className}`}>
-        <Navbar />
+        <div className="bg-white">
+          <Navbar />
 
-        <div className=" px-4 md:w-3/5 mx-auto pt-28">
-          {children}
+          <div className=" px-4 md:w-3/5 mx-auto pt-28">
+            {children}
+          </div>
+
+          <Footer />
         </div>
-
-        <Footer />
       </body>
     </html>
   );
