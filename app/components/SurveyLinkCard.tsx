@@ -15,7 +15,7 @@ const SurveyLinkCard = ({ title, text, badgeColor = 'green' }: SurveyLinkCardPro
     }
 
     return (
-        <Link href={""} className="bg-rasa-blue-100 font-vazir hover:shadow-md transition-all
+        <Link href={""} className="bg-rasa-blue-50 font-vazir hover:shadow-md transition-all
         flex
         rounded-md w-full p-4">
 
