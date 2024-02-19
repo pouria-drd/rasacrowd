@@ -51,7 +51,7 @@ const Input = ({ label, value, type = "text",
                     className={`bg-rasa-blue-25 appearance-none transition-all
                     outline-none focus:ring-0 
                     border-2 hover:border-rasa-blue-250 
-                    text-sm text-gray-900
+                    text-sm text-gray-800
                     rounded-lg px-2.5 pb-2 pt-4 w-full r2l peer 
                     ${hasError ? 'border-red-300 focus:border-red-400'
                             : 'border-gray-300 focus:border-rasa-blue-250'
