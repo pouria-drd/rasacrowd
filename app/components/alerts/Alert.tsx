@@ -5,6 +5,7 @@ import WarningIcon from "./icons/WarningIcon";
 
 interface AlertProps {
     title: string;
+    message: string;
     type: 'info' | 'success' | 'error' | 'warning';
 }
 
@@ -76,19 +77,19 @@ const Alert = (props: AlertProps) => {
             className={`font-vazir border
             ${handleColor('bg')} ${handleColor("border")}
             flex flex-row-reverse items-center justify-end
-            rounded-3xl shadow px-6 py-5 my-4`}>
+            rounded-3xl shadow px-6 py-5`}>
 
             <div className="grid items-center grid-cols-12 w-full text-right r2l">
                 <div className={`flex items-center w-full h-full ${handleColor("text")}`}>
                     {handleIcon()}
                 </div>
 
-                <h3 className="text-lg text-rasa-blue-800 col-span-11">
+                <h3 className="text-lg text-rasa-blue-800 mr-2 sm:mr-0">
                     {props.title}
                 </h3>
 
-                <p className="text-sm text-gray-500 col-span-11 col-start-2">
-                    sdjfheuijdfoklrfkejgfi
+                <p className="text-sm text-gray-500 col-span-11 col-start-2 mr-2 sm:mr-0">
+                    {props.message}
                 </p>
             </div>
         </div>

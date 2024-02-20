@@ -15,14 +15,14 @@ const playGround = () => {
                 play-ground
             </p>
 
-            <Input label="نام و نام خانوادگی" />
+            <Input placeHolder="نام و نام خانوادگی" />
 
             <br />
             <br />
 
             <Dropdown title="مدرک تحصیلی" options={options} />
 
-            <Input label="نام و نام خانوادگی" />
+            <Input placeHolder="نام و نام خانوادگی" />
         </div>
     )
 }

@@ -3,7 +3,7 @@ import { useEffect, useState, useId } from "react";
 
 
 interface InputProps {
-    label: string;
+    placeHolder: string;
     hasError?: boolean;
     errorMessage?: string;
     type?: React.InputHTMLAttributes<HTMLInputElement>['type'];
@@ -15,7 +15,7 @@ interface InputProps {
 }
 
 
-const Input = ({ label, value, type = "text",
+const Input = ({ placeHolder, value, type = "text",
     hasError, maxLength, errorMessage, onChange, getID }: InputProps) => {
 
     const uniqueId = `feraitInput${useId()}`;
@@ -77,13 +77,13 @@ const Input = ({ label, value, type = "text",
                     peer-focus:-top-1
 
                     rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-10 -start-3`}>
-                    {`${label}`}
+                    {`${placeHolder}`}
                 </label>
             </div>
             {
                 hasError &&
                 <p className="text-red-400 text-xs pr-1">
-                    {errorMsg ? errorMessage : `فیلد ${label} اجباری است`}
+                    {errorMsg ? errorMessage : `فیلد ${placeHolder} اجباری است`}
                 </p>
             }
         </div>

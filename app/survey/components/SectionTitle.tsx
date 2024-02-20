@@ -11,9 +11,8 @@ const SectionTitle = (props: SectionTitleProps) => {
     return (
         <>
             <div
-                className="bg-gray-300 
-                flex items-center justify-end gap-2
-                px-4 py-2">
+                className="
+                flex items-center justify-end gap-2">
 
                 <h2 className="text-rasa-blue-800 text-lg sm:text-xl">
                     {props.title}

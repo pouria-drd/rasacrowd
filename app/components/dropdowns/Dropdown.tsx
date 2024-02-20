@@ -87,7 +87,7 @@ export const Dropdown = ({ title, options, defaultOption, onSelectOption }: Drop
                     from-transparent from-50%
                     to-rasa-blue-25 to-50%
                     px-2 group-hover:text-rasa-purple-400
-                    ${isOpen ? 'text-rasa-purple-400' : 'text-rasa-purple-100'} `}>
+                    ${isOpen || selectedOption ? 'text-rasa-purple-400' : 'text-rasa-purple-100'} `}>
                     {title}
                 </span>
 
@@ -108,7 +108,7 @@ export const Dropdown = ({ title, options, defaultOption, onSelectOption }: Drop
                 {
                     options.map((opt, idx) => (
                         <Option onClick={(option) => { handleOptionClick(option) }}
-                            option={opt} key={idx} />
+                            option={opt} key={idx} isActive={selectedOption === opt} />
                     ))
                 }
             </div>
