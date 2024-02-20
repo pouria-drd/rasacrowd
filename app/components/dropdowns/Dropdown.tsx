@@ -103,7 +103,7 @@ export const Dropdown = ({ title, options, defaultOption, onSelectOption }: Drop
                 className={`bg-rasa-blue-25 transition-all
                     flex flex-col 
                     rounded-md overflow-hidden
-                    px-4 ${isOpen ? 'border-2 py-3' : ''}`}>
+                    px-4 ${isOpen ? 'border-2 pt-2 pb-3 mb-2' : ''}`}>
 
                 {
                     options.map((opt, idx) => (
@@ -111,9 +111,7 @@ export const Dropdown = ({ title, options, defaultOption, onSelectOption }: Drop
                             option={opt} key={idx} />
                     ))
                 }
-
             </div>
-
         </div>
     )
 }

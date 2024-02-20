@@ -21,6 +21,8 @@ const playGround = () => {
             <br />
 
             <Dropdown title="مدرک تحصیلی" options={options} />
+
+            <Input label="نام و نام خانوادگی" />
         </div>
     )
 }
