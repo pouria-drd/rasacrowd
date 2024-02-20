@@ -1,4 +1,6 @@
-import Link from "next/link"
+import Link from "next/link";
+
+import Badge from "./Badge";
 import ArrowIcon from "./icons/ArrowIcon";
 
 interface SurveyLinkCardProps {
@@ -8,12 +10,6 @@ interface SurveyLinkCardProps {
 }
 
 const SurveyLinkCard = ({ title, text, badgeColor = 'green' }: SurveyLinkCardProps) => {
-    const cardLineColors = {
-        'green': "bg-rasa-green-800",
-        'blue': "bg-rasa-blue-800",
-        'orange': "bg-rasa-orange-800",
-    }
-
     return (
         <Link href={""} className="bg-rasa-blue-50 font-vazir hover:shadow-md transition-all
         flex
@@ -25,8 +21,7 @@ const SurveyLinkCard = ({ title, text, badgeColor = 'green' }: SurveyLinkCardPro
                         {title}
                     </h3>
 
-                    <span className={`${cardLineColors[badgeColor]} rounded-sm w-1 h-8 p-[2px]`}>
-                    </span>
+                    <Badge badgeColor={badgeColor} />
                 </div>
 
                 <div className="w-full">
