@@ -25,7 +25,13 @@ const config: Config = {
 
       colors: {
         "rasa": {
+          "red": {
+            200: "#FEECE3",
+            400: "#FF5400",
+          },
+
           "orange": {
+            200: "#FFF2DD",
             400: "#FF9E00",
             500: "#FF9100",
             600: "#FF8500",
@@ -37,6 +43,7 @@ const config: Config = {
             25: "#F4F9FF",
             50: "#F2FBFF",
             100: "#CAE9F6",
+            200: "#E7F8FC",
             250: "#5186CA",
             300: "#00B4D8",
             400: "#0096C7",
@@ -47,8 +54,10 @@ const config: Config = {
           },
 
           "green": {
+            200: "#F6FFEC",
             400: "#DCEDF0",
-            800: "#1A6372"
+            600: "#679436",
+            800: "#1A6372",
           },
 
           "purple": {
