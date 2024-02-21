@@ -1,6 +1,6 @@
 import Input from "@/app/components/inputs/Input";
 import SectionTitle from "../../components/SectionTitle";
-import { Dropdown } from "@/app/components/dropdowns/Dropdown";
+import TextArea from "@/app/components/inputs/TextArea";
 
 const IdeaForm = () => {
 
@@ -10,6 +10,8 @@ const IdeaForm = () => {
             <SectionTitle title="شرح ایده" />
 
             <Input placeHolder="عنوان ایده" />
+
+            <TextArea placeHolder="خلاصه ایده" maxLength={421} />
         </>
     )
 }
