@@ -11,17 +11,18 @@ import { useEffect, useRef, useState } from "react";
 interface DropdownProps {
     title: string; // Title for the dropdown
     options: OptionProps[]; // Array of dropdown options
+    onSelectOption: (option: OptionProps) => void; // Callback function when an option is selected
     defaultOption?: OptionProps; // Default selected option
-    onSelectOption?: (option: OptionProps) => void; // Callback function when an option is selected
+    defaultValue?: string; // Default selected option
 }
 
-export const Dropdown = ({ title, options, defaultOption, onSelectOption }: DropdownProps) => {
+export const Dropdown = (props: DropdownProps) => {
     // State to track the dropdown's visibility.
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
     // State to track the currently selected option
     const [selectedOption, setSelectedOption] =
-        useState<OptionProps | null>(defaultOption || null);
+        useState<OptionProps | null>(props.defaultOption || null);
 
     // State to track the height of the dropdown content.
     const [contentHeight, setContentHeight] = useState<number>(0);
@@ -39,6 +40,7 @@ export const Dropdown = ({ title, options, defaultOption, onSelectOption }: Drop
     const handleOptionClick = (option: OptionProps) => {
         setSelectedOption(option);
         setIsOpen(false);
+        props.onSelectOption(option);
     };
 
     // Effect to update the content height when the dropdown is active.
@@ -69,6 +71,19 @@ export const Dropdown = ({ title, options, defaultOption, onSelectOption }: Drop
     }, []); // Empty dependency array ensures the effect runs only once on mount
 
 
+    useEffect(() => {
+        if (props.defaultValue) {
+            const relatedOption = props.options.find(x => x.label === props.defaultValue);
+
+            console.log(relatedOption);
+
+            if (relatedOption) {
+                setSelectedOption(relatedOption);
+            };
+        };
+
+    }, [props.defaultValue])
+
     return (
         <div ref={dropdownRef} className="flex flex-col gap-2 
         relative font-vazir">
@@ -88,7 +103,7 @@ export const Dropdown = ({ title, options, defaultOption, onSelectOption }: Drop
                     to-rasa-blue-25 to-50%
                     px-2 group-hover:text-rasa-purple-400
                     ${isOpen || selectedOption ? 'text-rasa-purple-400' : 'text-rasa-purple-100'} `}>
-                    {title}
+                    {props.title}
                 </span>
 
                 <span className={`${selectedOption ?
@@ -106,7 +121,7 @@ export const Dropdown = ({ title, options, defaultOption, onSelectOption }: Drop
                     px-4 ${isOpen ? 'border-2 pt-2 pb-3 mb-2' : ''}`}>
 
                 {
-                    options.map((opt, idx) => (
+                    props.options.map((opt, idx) => (
                         <Option onClick={(option) => { handleOptionClick(option) }}
                             option={opt} key={idx} isActive={selectedOption === opt} />
                     ))

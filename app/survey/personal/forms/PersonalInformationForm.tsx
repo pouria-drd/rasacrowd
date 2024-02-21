@@ -30,9 +30,13 @@ const PersonalInformationForm = (props: FormProps) => {
                 defaultValue={props.data.AgentFullName}
                 onChange={(e) => handleOnDataChange(props, 'AgentFullName', e.target.value)} />
 
-            <Dropdown title="بازه سنی" options={ageOptions} />
+            <Dropdown title="بازه سنی" options={ageOptions}
+                defaultValue={props.data.AgentAgeRange}
+                onSelectOption={(e) => handleOnDataChange(props, 'AgentAgeRange', e.label)} />
 
-            <Dropdown title="مدرک تحصیلی" options={eduOptions} />
+            <Dropdown title="مدرک تحصیلی" options={eduOptions}
+                defaultValue={props.data.AgentDegree}
+                onSelectOption={(e) => handleOnDataChange(props, 'AgentDegree', e.label)} />
 
             <Input placeHolder="شماره همراه" maxLength={11}
                 defaultValue={props.data.AgentPhoneNumber}
