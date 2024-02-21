@@ -7,13 +7,13 @@ function Home() {
     <main className="flex flex-col gap-4 w-full">
       <Banner />
 
-      <SurveyLinkCard title="پرسشنامه فردی" badgeColor="green"
+      <SurveyLinkCard title="پرسشنامه فردی" href="/survey/personal" badgeColor="green"
         text="افرادی که ایده ای را راه اندازی کرده یا قصد راه اندازی آن را دارند." />
 
-      <SurveyLinkCard title="پرسشنامه شرکت ها" badgeColor="blue"
+      <SurveyLinkCard title="پرسشنامه شرکت ها" href="/" badgeColor="blue"
         text="شرکت یا استارتاپ هایی که قصد توسعه محصولات یا خدمات خود را دارند." />
 
-      <SurveyLinkCard title="پرسشنامه ادارات" badgeColor="orange"
+      <SurveyLinkCard title="پرسشنامه ادارات" href="/" badgeColor="orange"
         text="ادارات و سازمان های دولتی که طرحی برای فرصت های سرمایه گذاری دارند." />
 
       <Supporters />

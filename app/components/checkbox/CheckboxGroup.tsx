@@ -1,18 +1,13 @@
-'use client';
-
-import { useState } from "react";
 import Checkbox from "./Checkbox";
 
 interface CheckboxGroupProps {
     checkboxLabels: string[];
+    selectedIndex: number;
     onSelectionChange: (selectedIndexes: number) => void;
 }
 
 const CheckboxGroup = (props: CheckboxGroupProps) => {
-    const [selectedCheckbox, setSelectedCheckbox] = useState<number>(0);
-
     const handleCheckboxClick = (index: number) => {
-        setSelectedCheckbox(index);
         props.onSelectionChange(index);
     };
 
@@ -22,7 +17,7 @@ const CheckboxGroup = (props: CheckboxGroupProps) => {
             isStart={index === 0}
             key={index}
             label={label}
-            isSelected={selectedCheckbox === index}
+            isSelected={props.selectedIndex === index}
             onClick={() => handleCheckboxClick(index)}
         />
     ));

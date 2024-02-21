@@ -6,12 +6,13 @@ import ArrowIcon from "./icons/ArrowIcon";
 interface SurveyLinkCardProps {
     title: string;
     text: string;
+    href: string;
     badgeColor?: 'green' | 'blue' | 'orange';
 }
 
-const SurveyLinkCard = ({ title, text, badgeColor = 'green' }: SurveyLinkCardProps) => {
+const SurveyLinkCard = ({ title, text, href, badgeColor = 'green' }: SurveyLinkCardProps) => {
     return (
-        <Link href={""} className="bg-rasa-blue-50 font-vazir hover:shadow-md transition-all
+        <Link href={href} className="bg-rasa-blue-50 font-vazir hover:shadow-md transition-all
         flex
         rounded-md w-full p-4">
 
@@ -37,7 +38,6 @@ const SurveyLinkCard = ({ title, text, badgeColor = 'green' }: SurveyLinkCardPro
                     </p>
                 </div>
             </div>
-
         </Link>
     )
 }

@@ -11,7 +11,7 @@ const SectionTitle = (props: SectionTitleProps) => {
     return (
         <>
             <div
-                className="
+                className="cursor-default
                 flex items-center justify-end gap-2">
 
                 <h2 className="text-rasa-blue-800 text-lg sm:text-xl">

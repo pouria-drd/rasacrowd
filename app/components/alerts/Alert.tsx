@@ -74,7 +74,7 @@ const Alert = (props: AlertProps) => {
 
     return (
         <div
-            className={`font-vazir border
+            className={`font-vazir border cursor-default
             ${handleColor('bg')} ${handleColor("border")}
             flex flex-row-reverse items-center justify-end
             rounded-3xl shadow px-6 py-5`}>

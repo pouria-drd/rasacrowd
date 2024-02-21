@@ -24,7 +24,7 @@ const Navbar = () => {
                         ویرایش
                     </Link>
 
-                    <Link href={""} className={`${router == "/" ? "active" : 'nav-link'}`} >
+                    <Link href={"/"} className={`${router == "/" ? "active" : 'nav-link'}`} >
                         خانه
                     </Link>
                 </div>
