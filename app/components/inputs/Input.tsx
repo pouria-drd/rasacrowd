@@ -36,6 +36,12 @@ const Input = ({ placeHolder, value, type = "text", defaultValue,
     }, [errorMessage]);
 
     useEffect(() => {
+        if (defaultValue) {
+            setHasValue(true);
+        }
+    }, [defaultValue]);
+
+    useEffect(() => {
         if (getID) {
             getID(uniqueId);
         }

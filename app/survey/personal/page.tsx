@@ -27,6 +27,7 @@ const Personal = () => {
         IdeaTitle: '',
         MarketPoints: '',
         MarketTarget: '',
+        MarketRivals: '',
         ProductPhase: '',
         RequestedInvest: '',
     };
@@ -43,11 +44,11 @@ const Personal = () => {
     }
 
     const sections: ReactNode[] = [
-        <PersonalInformationForm />,
+        <PersonalInformationForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} />,
         <IdeaForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} />,
-        <ProduceFrom />,
-        <BazaarForm />,
-        <StockForm />,
+        <ProduceFrom data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} />,
+        <BazaarForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} />,
+        <StockForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} />,
     ];
 
     return (

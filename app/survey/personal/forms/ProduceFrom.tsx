@@ -1,7 +1,8 @@
 import SectionTitle from "../../components/SectionTitle";
 import OptionsSelector from "@/app/components/OptionsSelector";
+import { handleOnDataChange, FormProps } from "../utils/formUtils";
 
-const ProduceFrom = () => {
+const ProduceFrom = (props: FormProps) => {
     const options = [
         "تحقیقات اولیه",
         "تولید نمونه اولیه و کسب مجوزات",

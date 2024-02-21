@@ -9,6 +9,7 @@ interface PersonalProps {
     ProductPhase: string;
     MarketPoints: string;
     MarketTarget: string;
+    MarketRivals: string;
     DoneInvest: string;
     RequestedInvest: string;
     CaptchaId: string;

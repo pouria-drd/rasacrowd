@@ -6,9 +6,9 @@ interface InputProps {
     placeHolder: string;
     hasError?: boolean;
     errorMessage?: string;
-    value?: React.InputHTMLAttributes<HTMLInputElement>['value'];
-    defaultValue?: React.InputHTMLAttributes<HTMLInputElement>['defaultValue'];
-    maxLength?: React.InputHTMLAttributes<HTMLInputElement>['maxLength'];
+    value?: React.InputHTMLAttributes<HTMLTextAreaElement>['value'];
+    defaultValue?: React.InputHTMLAttributes<HTMLTextAreaElement>['defaultValue'];
+    maxLength?: React.InputHTMLAttributes<HTMLTextAreaElement>['maxLength'];
 
     getID?: (id: string) => void;
     onChange?: React.InputHTMLAttributes<HTMLTextAreaElement>['onChange'];
@@ -25,7 +25,7 @@ const TextArea = ({ placeHolder, value, defaultValue,
     const handleOnChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         if (onChange) onChange(e);
 
-        setHasValue(!!e.target.value);
+        setHasValue(!!e.target.value || !!e.target.defaultValue);
     };
 
     useEffect(() => {
@@ -33,6 +33,12 @@ const TextArea = ({ placeHolder, value, defaultValue,
             setErrorMsg(errorMessage);
         }
     }, [errorMessage]);
+
+    useEffect(() => {
+        if (defaultValue) {
+            setHasValue(true);
+        }
+    }, [defaultValue]);
 
     useEffect(() => {
         if (getID) {
@@ -68,7 +74,7 @@ const TextArea = ({ placeHolder, value, defaultValue,
                     to-rasa-blue-25 to-35%
 
                     duration-150 transform -translate-y-1/2 
-                    top-0 right-3 z-10 px-2
+                    -top-1 right-3 z-10 px-2
                     peer-focus:px-2 peer-focus:text-rasa-purple-400 
 
                     peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 
