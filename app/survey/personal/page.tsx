@@ -1,18 +1,53 @@
-import { ReactNode } from "react";
+'use client';
+
+import { ReactNode, useState } from "react";
 import Alert from "@/app/components/alerts/Alert";
 
 import IdeaForm from "./forms/IdeaForm";
+import StockForm from "./forms/StockForm";
+import BazaarForm from "./forms/BazaarForm";
 import ProduceFrom from "./forms/ProduceFrom";
 import PersonalInformationForm from "./forms/PersonalInformationForm";
 import SectionsManager from "@/app/components/mangers/SectionsManager";
 
+
 const Personal = () => {
     const checkboxLabels = ["مشخصات", "ایده", "تولید", "بازار", "سرمایه", "ثبت"];
 
+    const defaultDTO: PersonalProps = {
+        AgentAgeRange: '',
+        AgentDegree: '',
+        AgentFullName: '',
+        AgentPhoneNumber: '',
+        CaptchaCode: '',
+        CaptchaId: '',
+        DoneInvest: '',
+        Email: '',
+        IdeaDescription: '',
+        IdeaTitle: '',
+        MarketPoints: '',
+        MarketTarget: '',
+        ProductPhase: '',
+        RequestedInvest: '',
+    };
+
+    const [dto, setDTO] = useState<PersonalProps>(defaultDTO);
+
+    const handleOnDataChange = (key: keyof PersonalProps, value: string | undefined) => {
+        setDTO((prevDTO) => {
+
+            return {
+                ...prevDTO, [key]: value
+            };
+        });
+    }
+
     const sections: ReactNode[] = [
         <PersonalInformationForm />,
-        <IdeaForm />,
-        <ProduceFrom />
+        <IdeaForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} />,
+        <ProduceFrom />,
+        <BazaarForm />,
+        <StockForm />,
     ];
 
     return (

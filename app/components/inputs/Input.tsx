@@ -8,6 +8,7 @@ interface InputProps {
     errorMessage?: string;
     type?: React.InputHTMLAttributes<HTMLInputElement>['type'];
     value?: React.InputHTMLAttributes<HTMLInputElement>['value'];
+    defaultValue?: React.InputHTMLAttributes<HTMLInputElement>['defaultValue'];
     maxLength?: React.InputHTMLAttributes<HTMLInputElement>['maxLength'];
 
     getID?: (id: string) => void;
@@ -15,7 +16,7 @@ interface InputProps {
 }
 
 
-const Input = ({ placeHolder, value, type = "text",
+const Input = ({ placeHolder, value, type = "text", defaultValue,
     hasError, maxLength, errorMessage, onChange, getID }: InputProps) => {
 
     const uniqueId = `feraitInput${useId()}`;
@@ -44,7 +45,7 @@ const Input = ({ placeHolder, value, type = "text",
         <div className="flex flex-col gap-1 font-vazir r2l">
             <div className="relative">
                 <input
-                    id={uniqueId}
+                    id={uniqueId} defaultValue={defaultValue}
                     type={type}
                     maxLength={maxLength}
                     value={value}

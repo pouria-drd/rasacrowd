@@ -1,12 +1,13 @@
 'use client';
-import { useEffect, useState, useId } from "react";
 
+import { useEffect, useState, useId } from "react";
 
 interface InputProps {
     placeHolder: string;
     hasError?: boolean;
     errorMessage?: string;
     value?: React.InputHTMLAttributes<HTMLInputElement>['value'];
+    defaultValue?: React.InputHTMLAttributes<HTMLInputElement>['defaultValue'];
     maxLength?: React.InputHTMLAttributes<HTMLInputElement>['maxLength'];
 
     getID?: (id: string) => void;
@@ -14,7 +15,7 @@ interface InputProps {
 }
 
 
-const TextArea = ({ placeHolder, value,
+const TextArea = ({ placeHolder, value, defaultValue,
     hasError, maxLength, errorMessage, onChange, getID }: InputProps) => {
 
     const uniqueId = `feraitInput${useId()}`;
@@ -45,7 +46,7 @@ const TextArea = ({ placeHolder, value,
                 <textarea
                     id={uniqueId}
                     maxLength={maxLength}
-                    value={value}
+                    value={value} defaultValue={defaultValue}
                     className={`bg-rasa-blue-25 appearance-none text-justify
                     outline-none focus:ring-0 
                     border-2 hover:border-rasa-blue-250 
