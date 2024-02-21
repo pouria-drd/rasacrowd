@@ -16,7 +16,9 @@ const ProduceFrom = (props: FormProps) => {
         <>
             <SectionTitle title="مراحل تولید" />
 
-            <OptionsSelector title="کسب و کار شما در کدام یک از مراحل زیر است؟" options={options} />
+            <OptionsSelector default={props.data.ProductPhase}
+                onChange={(v) => handleOnDataChange(props, 'ProductPhase', v)}
+                title="کسب و کار شما در کدام یک از مراحل زیر است؟" options={options} />
         </>
     )
 }

@@ -1,18 +1,27 @@
 'use client';
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Checkbox from "./inputs/Checkbox";
 
 interface OptionsSelectorProps {
     title: string;
+    default: string;
     options: string[];
+    onChange: (label: string) => void;
 }
 
 const OptionsSelector = (props: OptionsSelectorProps) => {
-    const [selectedCheckbox, setSelectedCheckbox] = useState<string | null>(null);
+    const [selectedCheckbox, setSelectedCheckbox] = useState<string | null | undefined>(null);
+
+    useEffect(() => {
+        if (props.default) {
+            setSelectedCheckbox(props.options.find(x => x === props.default))
+        }
+    }, [props.default])
 
     const handleCheckboxChange = (label: string) => {
         setSelectedCheckbox(label);
+        props.onChange(label);
     };
 
     return (
