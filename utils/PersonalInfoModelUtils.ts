@@ -1,27 +1,27 @@
-import TestModel from '../models/test';
+import PersonalInfoModel from "@/models/PersonalInfo";
 
 export async function createItem(data: { name: string; description: string }) {
-    const newItem = new TestModel(data);
+    const newItem = new PersonalInfoModel(data);
     await newItem.save();
     return newItem;
 }
 
 export async function getItems() {
     try {
-        return TestModel.find({});
+        return PersonalInfoModel.find({});
     } catch (error) {
         console.log(error)
     }
 }
 
 export async function getItemById(id: string) {
-    return TestModel.findById(id);
+    return PersonalInfoModel.findById(id);
 }
 
 export async function updateItem(id: string, data: { name: string; description: string }) {
-    return TestModel.findByIdAndUpdate(id, data, { new: true });
+    return PersonalInfoModel.findByIdAndUpdate(id, data, { new: true });
 }
 
 export async function deleteItem(id: string) {
-    return TestModel.findByIdAndDelete(id);
+    return PersonalInfoModel.findByIdAndDelete(id);
 }

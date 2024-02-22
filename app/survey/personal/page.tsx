@@ -7,6 +7,7 @@ import IdeaForm from "./forms/IdeaForm";
 import StockForm from "./forms/StockForm";
 import BazaarForm from "./forms/BazaarForm";
 import ProduceFrom from "./forms/ProduceFrom";
+import RegisterForm from "./forms/RegisterForm";
 import PersonalInformationForm from "./forms/PersonalInformationForm";
 import SectionsManager from "@/app/components/mangers/SectionsManager";
 
@@ -49,6 +50,7 @@ const Personal = () => {
         <ProduceFrom data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} />,
         <BazaarForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} />,
         <StockForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} />,
+        <RegisterForm />
     ];
 
     return (

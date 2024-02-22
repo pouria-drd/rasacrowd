@@ -48,7 +48,7 @@ const Input = ({ placeHolder, value, type = "text", defaultValue,
     }, [getID]);
 
     return (
-        <div className="flex flex-col gap-1 font-vazir r2l">
+        <div className="flex flex-col gap-1 font-vazir r2l w-full">
             <div className="relative">
                 <input
                     id={uniqueId} defaultValue={defaultValue}

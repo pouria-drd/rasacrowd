@@ -1,14 +1,6 @@
-import { connectDB } from '@/lib/db';
-import { NextResponse } from 'next/server';
-
-import {
-    createItem,
-    getItems,
-    getItemById,
-    updateItem,
-    deleteItem,
-} from '../../../utils/testModelUtils';
-
+import { connectDB } from "@/lib/db";
+import { NextResponse } from "next/server";
+import { createItem, getItems } from "@/utils/PersonalInfoModelUtils";
 
 export async function GET(request: Request) {
     try {
@@ -28,6 +20,7 @@ export async function GET(request: Request) {
 
     return response;
 }
+
 
 export async function POST(request: Request) {
     try {

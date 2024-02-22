@@ -11,7 +11,7 @@ const Button = (props: ButtonProps) => {
 
     const buttonStyle = type ===
         'primary' ?
-        'bg-rasa-blue-600 text-white hover:bg-rasa-blue-50 hover:text-rasa-blue-600'
+        'bg-rasa-blue-600 text-white'
         :
         'bg-rasa-blue-50 text-rasa-blue-600 hover:bg-rasa-blue-600 hover:text-white'
 
