@@ -3,7 +3,7 @@ import SectionTitle from "../../components/SectionTitle";
 import { Dropdown } from "@/app/components/dropdowns/Dropdown";
 import { FormProps, handleOnDataChange } from "../../utils/formUtils";
 
-const PersonalInformationForm = (props: FormProps) => {
+const PersonalForm = (props: FormProps) => {
     const ageOptions: OptionProps[] = [
         { label: 'زیر 20 سال', value: 'زیر 20 سال' },
         { label: '20 تا 25سال', value: '20 تا 25سال' },
@@ -24,19 +24,15 @@ const PersonalInformationForm = (props: FormProps) => {
 
     return (
         <>
-            <SectionTitle title="مشخصات فردی" />
+            <SectionTitle title="مشخصات کلی" />
 
-            <Input placeHolder="نام و نام خانوادگی"
+            <Input placeHolder="نام شرکت یا کارگاه اقتصادی"
                 defaultValue={props.data.AgentFullName}
                 onChange={(e) => handleOnDataChange(props, 'AgentFullName', e.target.value)} />
 
-            <Dropdown title="بازه سنی" options={ageOptions}
-                defaultValue={props.data.AgentAgeRange}
-                onSelectOption={(e) => handleOnDataChange(props, 'AgentAgeRange', e.label)} />
-
-            <Dropdown title="مدرک تحصیلی" options={eduOptions}
-                defaultValue={props.data.AgentDegree}
-                onSelectOption={(e) => handleOnDataChange(props, 'AgentDegree', e.label)} />
+            <Input placeHolder="نام و نام خانوادگی مسئول پیگیری"
+                defaultValue={props.data.AgentFullName}
+                onChange={(e) => handleOnDataChange(props, 'AgentFullName', e.target.value)} />
 
             <Input placeHolder="شماره همراه" maxLength={11}
                 defaultValue={props.data.AgentPhoneNumber}
@@ -50,4 +46,4 @@ const PersonalInformationForm = (props: FormProps) => {
     )
 }
 
-export default PersonalInformationForm
+export default PersonalForm

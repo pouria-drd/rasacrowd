@@ -10,7 +10,7 @@ function Home() {
       <SurveyLinkCard title="پرسشنامه فردی" href="/survey/personal" badgeColor="green"
         text="افرادی که ایده ای را راه اندازی کرده یا قصد راه اندازی آن را دارند." />
 
-      <SurveyLinkCard title="پرسشنامه شرکت ها" href="/" badgeColor="blue"
+      <SurveyLinkCard title="پرسشنامه شرکت ها" href="/survey/team" badgeColor="blue"
         text="شرکت یا استارتاپ هایی که قصد توسعه محصولات یا خدمات خود را دارند." />
 
       <SurveyLinkCard title="پرسشنامه ادارات" href="/" badgeColor="orange"

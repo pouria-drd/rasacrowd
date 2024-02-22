@@ -10,13 +10,13 @@ const IdeaForm = (props: FormProps) => {
             <SectionTitle title="شرح ایده" />
 
             <Input
-                placeHolder="عنوان ایده"
+                placeHolder="عنوان طرح"
                 defaultValue={props.data.IdeaTitle}
                 onChange={(e) => handleOnDataChange(props, 'IdeaTitle', e.target.value)}
             />
 
             <TextArea
-                placeHolder="خلاصه ایده"
+                placeHolder="خلاصه طرح"
                 defaultValue={props.data.IdeaDescription}
                 maxLength={421}
                 onChange={(e) => handleOnDataChange(props, 'IdeaDescription', e.target.value)}
