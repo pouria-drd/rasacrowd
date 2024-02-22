@@ -1,6 +1,8 @@
 'use client';
 
 import { ReactNode, useState } from "react";
+
+import Button from "../buttons/Button";
 import CheckboxGroup from "../checkbox/CheckboxGroup";
 
 interface SectionsManagerProps {
@@ -20,9 +22,18 @@ const SectionsManager = (props: SectionsManagerProps) => {
     const handleNextSelection = () => {
         const nextIndex = currentSectionIndex + 1;
 
-        if (nextIndex < props.sections.length) {
+        if (nextIndex <= props.sections.length) {
             setSelectedSection(props.sections[nextIndex]);
             setCurrentSectionIndex(nextIndex);
+        }
+    }
+
+    const handlePreviousSelection = () => {
+        const previousIndex = currentSectionIndex - 1;
+
+        if (previousIndex >= 0) {
+            setSelectedSection(props.sections[previousIndex]);
+            setCurrentSectionIndex(previousIndex);
         }
     }
 
@@ -38,12 +49,13 @@ const SectionsManager = (props: SectionsManagerProps) => {
                 {selectedSection}
             </div>
 
-            <button
-                onClick={handleNextSelection}
-                className="bg-rasa-blue-600 text-white rounded-lg px-6 py-2 w-fit"
-            >
-                بعدی
-            </button>
+            <div className="flex items-center justify-between">
+                {currentSectionIndex < props.sections.length &&
+                    <Button text="بعدی" onClick={handleNextSelection} />}
+
+                {currentSectionIndex > 0 &&
+                    <Button text="قبلی" type="outline" onClick={handlePreviousSelection} />}
+            </div>
         </>
     )
 }
