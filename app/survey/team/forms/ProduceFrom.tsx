@@ -1,6 +1,6 @@
 import SectionTitle from "../../components/SectionTitle";
 import OptionsSelector from "@/app/components/OptionsSelector";
-import { handleOnDataChange, FormProps } from "../../utils/formUtils";
+import { handleOnDataChange, FormProps } from "../../../utils/formUtils";
 
 const ProduceFrom = (props: FormProps) => {
     const options = [

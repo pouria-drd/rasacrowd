@@ -1,7 +1,7 @@
 import Input from "@/app/components/inputs/Input";
 import SectionTitle from "../../components/SectionTitle";
 import { Dropdown } from "@/app/components/dropdowns/Dropdown";
-import { FormProps, handleOnDataChange } from "../../utils/formUtils";
+import { FormProps, handleOnDataChange } from "../../../utils/formUtils";
 
 const PersonalForm = (props: FormProps) => {
     const ageOptions: OptionProps[] = [

@@ -1,6 +1,6 @@
 import Input from "@/app/components/inputs/Input";
 import SectionTitle from "../../components/SectionTitle";
-import { handleOnDataChange, FormProps } from "../../utils/formUtils";
+import { handleOnDataChange, FormProps } from "../../../utils/formUtils";
 
 const StockForm = (props: FormProps) => {
     return (

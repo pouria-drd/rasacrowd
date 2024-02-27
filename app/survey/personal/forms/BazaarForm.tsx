@@ -1,6 +1,6 @@
 import TextArea from "@/app/components/inputs/TextArea";
 import SectionTitle from "../../components/SectionTitle";
-import { FormProps, handleOnDataChange } from "../../utils/formUtils";
+import { FormProps, handleOnDataChange } from "../../../utils/formUtils";
 
 const BazaarForm = (props: FormProps) => {
     return (

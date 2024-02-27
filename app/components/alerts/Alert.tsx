@@ -2,10 +2,11 @@ import InfoIcon from "./icons/InfoIcon";
 import ErrorIcon from "./icons/ErrorIcon";
 import SuccessIcon from "./icons/SuccessIcon";
 import WarningIcon from "./icons/WarningIcon";
+import { ReactNode } from "react";
 
 interface AlertProps {
     title: string;
-    message: string;
+    message: ReactNode | string;
     type: 'info' | 'success' | 'error' | 'warning';
 }
 
@@ -84,7 +85,7 @@ const Alert = (props: AlertProps) => {
                     {handleIcon()}
                 </div>
 
-                <h3 className="text-lg text-rasa-blue-800 mr-2 sm:mr-0">
+                <h3 className="text-lg text-rasa-blue-800 mr-2 sm:mr-0 col-span-10 pr-2">
                     {props.title}
                 </h3>
 

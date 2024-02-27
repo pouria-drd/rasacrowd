@@ -8,11 +8,12 @@ import CheckboxGroup from "../checkbox/CheckboxGroup";
 interface SectionsManagerProps {
     sections: ReactNode[];
     checkboxLabels: string[];
+    onRegister?: () => void;
 }
 
 const SectionsManager = (props: SectionsManagerProps) => {
-    const [selectedSection, setSelectedSection] = useState<ReactNode>(props.sections[0]);
     const [currentSectionIndex, setCurrentSectionIndex] = useState<number>(0);
+    const [selectedSection, setSelectedSection] = useState<ReactNode>(props.sections[0]);
 
     const handleOnSelectionChange = (index: number) => {
         setSelectedSection(props.sections[index]);
@@ -38,7 +39,10 @@ const SectionsManager = (props: SectionsManagerProps) => {
     }
 
     const handleRegister = () => {
-        console.log("Registered");
+        if (props.onRegister) {
+            console.log("onRegister");
+            props.onRegister();
+        }
     }
 
     return (

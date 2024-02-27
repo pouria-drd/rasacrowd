@@ -1,6 +1,6 @@
 import { connectDB } from "@/lib/db";
 import { NextResponse } from "next/server";
-import { createItem, getItems } from "@/utils/PersonalInfoModelUtils";
+import { createItem, getItems } from "@/app/utils/PersonalInfoModelUtils";
 
 export async function GET(request: Request) {
     try {

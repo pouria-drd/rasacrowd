@@ -2,7 +2,7 @@ import React from "react";
 import Input from "@/app/components/inputs/Input";
 import TextArea from "@/app/components/inputs/TextArea";
 import SectionTitle from "../../components/SectionTitle";
-import { handleOnDataChange, FormProps } from "../../utils/formUtils";
+import { handleOnDataChange, FormProps } from "../../../utils/formUtils";
 
 const IdeaForm = (props: FormProps) => {
     return (
