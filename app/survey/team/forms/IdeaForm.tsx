@@ -2,9 +2,9 @@ import React from "react";
 import Input from "@/app/components/inputs/Input";
 import TextArea from "@/app/components/inputs/TextArea";
 import SectionTitle from "../../components/SectionTitle";
-import { handleOnDataChange, FormProps } from "../../../utils/formUtils";
+import { handleOnTeamDataChange, TeamFormProps } from "../../../utils/formUtils";
 
-const IdeaForm = (props: FormProps) => {
+const IdeaForm = (props: TeamFormProps) => {
     return (
         <>
             <SectionTitle title="شرح ایده" />
@@ -12,14 +12,14 @@ const IdeaForm = (props: FormProps) => {
             <Input
                 placeHolder="عنوان طرح"
                 defaultValue={props.data.IdeaTitle}
-                onChange={(e) => handleOnDataChange(props, 'IdeaTitle', e.target.value)}
+                onChange={(e) => handleOnTeamDataChange(props, 'IdeaTitle', e.target.value)}
             />
 
             <TextArea
                 placeHolder="خلاصه طرح"
                 defaultValue={props.data.IdeaDescription}
                 maxLength={421}
-                onChange={(e) => handleOnDataChange(props, 'IdeaDescription', e.target.value)}
+                onChange={(e) => handleOnTeamDataChange(props, 'IdeaDescription', e.target.value)}
             />
         </>
     );

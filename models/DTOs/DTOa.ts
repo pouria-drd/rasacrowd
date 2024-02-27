@@ -15,3 +15,20 @@ interface PersonalProps {
     CaptchaId: string;
     CaptchaCode: string;
 }
+
+interface TeamProps {
+    JobTitle: string;
+    AgentFullName: string;
+    AgentPhoneNumber: string;
+    Email: string;
+    IdeaTitle: string;
+    IdeaDescription: string;
+    ProductPhase: string;
+    MarketPoints: string;
+    MarketTarget: string;
+    MarketRivals: string;
+    DoneInvest: string;
+    RequestedInvest: string;
+    CaptchaId: string;
+    CaptchaCode: string;
+}

@@ -1,6 +1,6 @@
 import { BASE_URL } from "@/app/config";
 import { useEffect, useState } from "react";
-import { handleOnDataChange, FormProps } from "@/app/utils/formUtils";
+import { handleOnPersonalDataChange, PersonalFormProps } from "@/app/utils/formUtils";
 import { useToast, ToastStatusEnum } from "@/app/components/Toast/ToastProvider";
 
 import Image from "next/image";
@@ -9,7 +9,7 @@ import Input from "@/app/components/inputs/Input";
 import RefreshIcon from "@/app/components/icons/RefreshIcon";
 
 
-const RegisterForm = (props: FormProps) => {
+const RegisterForm = (props: PersonalFormProps) => {
     const { showToast } = useToast();
     const [captcha, setCaptcha] = useState<CaptchaResponse>({ captcha: '', id: '' });
 
@@ -22,7 +22,7 @@ const RegisterForm = (props: FormProps) => {
             const data = await res.json();
 
             setCaptcha(data);
-            handleOnDataChange(props, 'CaptchaId', data.id);
+            handleOnPersonalDataChange(props, 'CaptchaId', data.id);
 
             if (data.message) {
                 showToast(data.message, ToastStatusEnum.Error, "خطا")
@@ -59,7 +59,7 @@ const RegisterForm = (props: FormProps) => {
                 </div>
                 <Input placeHolder="عبارت امنیتی" maxLength={3}
                     defaultValue={props.data.CaptchaCode}
-                    onChange={(e) => handleOnDataChange(props, 'CaptchaCode', e.target.value)}
+                    onChange={(e) => handleOnPersonalDataChange(props, 'CaptchaCode', e.target.value)}
                 />
             </div>
         </div>

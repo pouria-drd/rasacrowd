@@ -65,11 +65,7 @@ const Personal = () => {
 
             const data = await res.json();
 
-            console.log(data.data)
-
-            setTrackingCode(data.data)
-
-            console.log(trackingCode)
+            setTrackingCode(data.data);
 
             if (data.status) {
                 showToast(data.message, ToastStatusEnum.Success)
@@ -114,11 +110,7 @@ const Personal = () => {
 
                     <div className="flex items-center justify-center w-full h-[50vh]">
                         <Alert title="عملیات موفقت آمیز بود" message={
-                            <div className="flex items-center justify-start gap-1 pr pr-2 w-full">
-                                <p>کد پیگیری شما</p>
-                                <p className="font-bold">{trackingCode}</p>
-                                <p>می باشد</p>
-                            </div>
+                            <Test trackingCode={trackingCode} />
                         } type="info" />
                     </div>
             }
@@ -127,3 +119,14 @@ const Personal = () => {
 };
 
 export default Personal;
+
+
+const Test = ({ trackingCode }: { trackingCode: string }) => {
+    return (
+        <div className="flex items-center justify-start gap-1 pr pr-2 w-full">
+            <p>کد پیگیری شما</p>
+            <p className="font-bold">{trackingCode}</p>
+            <p>می باشد</p>
+        </div>
+    )
+}

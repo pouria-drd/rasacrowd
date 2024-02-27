@@ -1,23 +1,23 @@
 import TextArea from "@/app/components/inputs/TextArea";
 import SectionTitle from "../../components/SectionTitle";
-import { FormProps, handleOnDataChange } from "../../../utils/formUtils";
+import { PersonalFormProps, handleOnPersonalDataChange } from "../../../utils/formUtils";
 
-const BazaarForm = (props: FormProps) => {
+const BazaarForm = (props: PersonalFormProps) => {
     return (
         <>
             <SectionTitle title="تحلیل بازار" />
 
             <TextArea placeHolder="مزایای رقابتی محصول"
                 defaultValue={props.data.MarketPoints}
-                onChange={(e) => handleOnDataChange(props, 'MarketPoints', e.target.value)} />
+                onChange={(e) => handleOnPersonalDataChange(props, 'MarketPoints', e.target.value)} />
 
             <TextArea placeHolder="بازار هدف (مشتریان)"
                 defaultValue={props.data.MarketTarget}
-                onChange={(e) => handleOnDataChange(props, 'MarketTarget', e.target.value)} />
+                onChange={(e) => handleOnPersonalDataChange(props, 'MarketTarget', e.target.value)} />
 
             <TextArea placeHolder="رقبای کلیدی داخلی و خارجی"
                 defaultValue={props.data.MarketRivals}
-                onChange={(e) => handleOnDataChange(props, 'MarketRivals', e.target.value)} />
+                onChange={(e) => handleOnPersonalDataChange(props, 'MarketRivals', e.target.value)} />
         </>
     )
 }

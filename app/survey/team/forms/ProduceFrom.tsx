@@ -1,8 +1,8 @@
 import SectionTitle from "../../components/SectionTitle";
 import OptionsSelector from "@/app/components/OptionsSelector";
-import { handleOnDataChange, FormProps } from "../../../utils/formUtils";
+import { handleOnTeamDataChange, TeamFormProps } from "../../../utils/formUtils";
 
-const ProduceFrom = (props: FormProps) => {
+const ProduceFrom = (props: TeamFormProps) => {
     const options = [
         "تحقیقات اولیه",
         "تولید نمونه اولیه و کسب مجوزات",
@@ -17,7 +17,7 @@ const ProduceFrom = (props: FormProps) => {
             <SectionTitle title="مراحل تولید" />
 
             <OptionsSelector default={props.data.ProductPhase}
-                onChange={(v) => handleOnDataChange(props, 'ProductPhase', v)}
+                onChange={(v) => handleOnTeamDataChange(props, 'ProductPhase', v)}
                 title="کسب و کار شما در کدام یک از مراحل زیر است؟" options={options} />
         </>
     )

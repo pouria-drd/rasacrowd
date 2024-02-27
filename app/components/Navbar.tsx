@@ -31,7 +31,7 @@ const Navbar = () => {
 
                 <div className='flex justify-end
             col-span-1 col-start-12'>
-                    <Link href={""}>
+                    <Link href={"/"}>
                         <Image className="w-8" src={RasaIcon} alt="RasaIcon" loading='lazy' />
                     </Link>
                 </div>
