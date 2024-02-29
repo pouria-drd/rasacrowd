@@ -5,8 +5,9 @@ import { ReactNode } from "react";
 interface ButtonProps {
     children: ReactNode;
     onClick: () => void;
-    type?: 'primary' | 'outline';
     disabled?: boolean;
+    isBusy?: boolean;
+    type?: 'primary' | 'outline';
 }
 
 const Button = (props: ButtonProps) => {
@@ -20,12 +21,19 @@ const Button = (props: ButtonProps) => {
 
     return (
         <button
-            onClick={props.onClick} disabled={props.disabled}
-            className={`${buttonStyle} disabled:cursor-not-allowed disabled:bg-opacity-70
+            onClick={props.onClick} disabled={props.disabled || props.isBusy}
+            className={`${buttonStyle} 
+            flex items-center justify-center gap-2
+            disabled:cursor-not-allowed disabled:bg-opacity-70
             transition-all rounded-lg px-6 py-2 w-fit`}>
 
-            {props.children}
+            {props.isBusy &&
+                <span className="text-white border-white border-t rounded-full w-2 h-2 p-2 animate-spin">
 
+                </span>
+            }
+
+            {props.children}
         </button>
     );
 };
