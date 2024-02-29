@@ -16,7 +16,7 @@ const Navbar = () => {
 
             <div className='grid grid-cols-12 w-full sm:w-3/5 px-4 mx-auto'>
                 <div className="flex items-center justify-center gap-10 col-span-8 col-start-3">
-                    <Link href={""} className={`${router == "/persist" ? "active" : 'nav-link'}`} >
+                    <Link href={"/tracking"} className={`${router == "/tracking" ? "active" : 'nav-link'}`} >
                         پیگیری
                     </Link>
 
