@@ -1,0 +1,10 @@
+{
+  "/_not-found": "app/_not-found.js",
+  "/edit/page": "app/edit/page.js",
+  "/page": "app/page.js",
+  "/survey/organization/page": "app/survey/organization/page.js",
+  "/survey/personal/page": "app/survey/personal/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/tracking/page": "app/tracking/page.js",
+  "/survey/team/page": "app/survey/team/page.js"
+}
