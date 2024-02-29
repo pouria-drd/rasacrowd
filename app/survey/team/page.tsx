@@ -2,7 +2,7 @@
 
 import { BASE_URL } from "@/app/config";
 import { useRouter } from "next/navigation";
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { useToast, ToastStatusEnum } from "@/app/components/Toast/ToastProvider";
 
 import IdeaForm from "./forms/IdeaForm";
@@ -25,6 +25,8 @@ const Team = (props: TeamPageProps) => {
     const router = useRouter();
     const { showToast } = useToast();
     const [trackingCode, setTrackingCode] = useState<string>('');
+    const [isDataEmpty, setIsDataEmpty] = useState<boolean>(false);
+    const [isOnLastForm, setIsOnLastForm] = useState<boolean>(false);
 
     const checkboxLabels = ["مشخصات", "ایده", "تولید", "بازار", "سرمایه", "ثبت"];
 
@@ -55,7 +57,6 @@ const Team = (props: TeamPageProps) => {
             };
         });
     }
-
 
     const handleRegister = async () => {
         try {
@@ -100,6 +101,13 @@ const Team = (props: TeamPageProps) => {
         <RegisterForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} />
     ];
 
+
+    useEffect(() => {
+        // Check if any required field in dto is empty
+        const isEmpty = Object.values(dto).some(value => value === '' || value === undefined);
+        setIsDataEmpty(isEmpty);
+    }, [dto]);
+
     return (
         <div
             className="font-vazir
@@ -113,9 +121,17 @@ const Team = (props: TeamPageProps) => {
                             message="در هنگام وارد کردن شماره تماس یا عبارت امنیتی، حتما از صفحه کلید انگلیسی استفاده کنید."
                         />
 
-                        <SectionsManager sections={sections}
+                        {
+                            isDataEmpty && isOnLastForm &&
+                            <Alert title="توجه" message="لطفا همه فیلد های الزامی را تکمیل کنید." type="error" />
+                        }
+
+                        <SectionsManager
+                            sections={sections}
+                            onRegister={handleRegister}
                             checkboxLabels={checkboxLabels}
-                            onRegister={handleRegister} />
+                            isOnLastForm={() => setIsOnLastForm(true)}
+                        />
 
                     </>
                     :

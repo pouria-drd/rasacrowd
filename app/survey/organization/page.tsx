@@ -2,7 +2,7 @@
 
 import { BASE_URL } from "@/app/config";
 import { useRouter } from "next/navigation";
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { useToast, ToastStatusEnum } from "@/app/components/Toast/ToastProvider";
 
 import Alert from "@/app/components/alerts/Alert";
@@ -21,7 +21,11 @@ interface OrganizationPageProps {
 
 const Organization = (props: OrganizationPageProps) => {
   const router = useRouter();
+
   const { showToast } = useToast();
+  const [isDataEmpty, setIsDataEmpty] = useState<boolean>(false);
+  const [isOnLastForm, setIsOnLastForm] = useState<boolean>(false);
+
   const [trackingCode, setTrackingCode] = useState<string>('');
 
   const checkboxLabels = ["مشخصات", "طرح", "ذی نفعان", "سرمایه", "ثبت"];
@@ -95,6 +99,12 @@ const Organization = (props: OrganizationPageProps) => {
     <RegisterForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} />,
   ];
 
+  useEffect(() => {
+    // Check if any required field in dto is empty
+    const isEmpty = Object.values(dto).some(value => value === '' || value === undefined);
+    setIsDataEmpty(isEmpty);
+  }, [dto]);
+
   return (
     <div
       className="font-vazir
@@ -102,15 +112,17 @@ const Organization = (props: OrganizationPageProps) => {
       {
         !trackingCode ?
           <>
-            <Alert
-              title="توجه!"
-              type="info"
-              message="در هنگام وارد کردن شماره تماس یا عبارت امنیتی، حتما از صفحه کلید انگلیسی استفاده کنید."
-            />
+            {
+              isDataEmpty && isOnLastForm &&
+              <Alert title="توجه" message="لطفا همه فیلد های الزامی را تکمیل کنید." type="error" />
+            }
 
-            <SectionsManager sections={sections}
+            <SectionsManager
+              sections={sections}
+              onRegister={handleRegister}
               checkboxLabels={checkboxLabels}
-              onRegister={handleRegister} />
+              isOnLastForm={() => setIsOnLastForm(true)}
+            />
 
           </>
           :

@@ -4,7 +4,6 @@ import { handleOnPersonalDataChange, PersonalFormProps } from "@/app/utils/formU
 import { useToast, ToastStatusEnum } from "@/app/components/Toast/ToastProvider";
 
 import Image from "next/image";
-import Alert from "@/app/components/alerts/Alert";
 import Input from "@/app/components/inputs/Input";
 import RefreshIcon from "@/app/components/icons/RefreshIcon";
 
@@ -39,8 +38,6 @@ const RegisterForm = (props: PersonalFormProps) => {
 
     return (
         <div className="flex flex-col gap-20 pt-5">
-            <Alert title="توجه" message="لطفا همه فیلد های الزامی را تکمیل کنید." type="error" />
-
             <div className="flex items-center justify-between gap-10">
                 <div className="bg-rasa-blue-25 
                 flex items-center justify-between

@@ -9,6 +9,7 @@ interface SectionsManagerProps {
     sections: ReactNode[];
     checkboxLabels: string[];
     onRegister?: () => void;
+    isOnLastForm?: () => void;
 }
 
 const SectionsManager = (props: SectionsManagerProps) => {
@@ -18,6 +19,10 @@ const SectionsManager = (props: SectionsManagerProps) => {
     const handleOnSelectionChange = (index: number) => {
         setSelectedSection(props.sections[index]);
         setCurrentSectionIndex(index);
+
+        if (props.isOnLastForm && index === props.sections.length - 1) {
+            props.isOnLastForm();
+        }
     }
 
     const handleNextSelection = () => {
