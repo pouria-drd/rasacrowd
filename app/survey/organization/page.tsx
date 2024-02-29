@@ -1,6 +1,7 @@
 'use client';
 
 import { BASE_URL } from "@/app/config";
+import { useRouter } from "next/navigation";
 import { ReactNode, useState } from "react";
 import { useToast, ToastStatusEnum } from "@/app/components/Toast/ToastProvider";
 
@@ -13,21 +14,26 @@ import ProjectForm from "./forms/ProjectForm";
 import RegisterForm from "./forms/RegisterForm";
 import InformationForm from "./forms/InformationForm";
 
-const Organization = () => {
+interface OrganizationPageProps {
+  data?: OrganizationProps;
+  isEdit?: boolean;
+}
 
+const Organization = (props: OrganizationPageProps) => {
+  const router = useRouter();
   const { showToast } = useToast();
   const [trackingCode, setTrackingCode] = useState<string>('');
 
   const checkboxLabels = ["مشخصات", "طرح", "ذی نفعان", "سرمایه", "ثبت"];
 
   const defaultDTO: OrganizationProps = {
-    AgentPhoneNumber: '',
-    CaptchaCode: '',
-    CaptchaId: '',
-    DoneInvest: '',
-    IdeaDescription: '',
-    IdeaTitle: '',
-    RequestedInvest: '',
+    agentPhoneNumber: '',
+    captchaCode: '',
+    captchaId: '',
+    doneInvest: '',
+    ideaDescription: '',
+    ideaTitle: '',
+    requestedInvest: '',
     investProfit: '',
     officeBoss: '',
     officeName: '',
@@ -36,7 +42,7 @@ const Organization = () => {
     yektaCode: '',
   };
 
-  const [dto, setDTO] = useState<OrganizationProps>(defaultDTO);
+  const [dto, setDTO] = useState<OrganizationProps>(props.data ?? defaultDTO);
 
   const handleOnDataChange = (key: keyof OrganizationProps, value: string | undefined) => {
     setDTO((prevDTO) => {
@@ -49,14 +55,14 @@ const Organization = () => {
 
   const handleRegister = async () => {
     try {
-      const url = BASE_URL + "survery/Organisation/new";
+      const url = BASE_URL + `survery/Organisation/${props.isEdit ? 'edit' : 'new'}`;
 
       const test = JSON.stringify(dto);
 
       console.log(test);
 
       const res = await fetch(url, {
-        method: 'POST',
+        method: `${props.isEdit ? 'PUT' : 'POST'}`,
         body: test,
         headers: {
           'Content-Type': 'application/json',
@@ -65,11 +71,16 @@ const Organization = () => {
 
       const data = await res.json();
       setTrackingCode(data.data);
+
       if (data.status) {
-        showToast(data.message, ToastStatusEnum.Success)
+        showToast(data.message, ToastStatusEnum.Success);
+
+        if (props.isEdit) {
+          router.push("/")
+        }
       }
       else if (!data.status && data.message) {
-        showToast(data.message, ToastStatusEnum.Error, "خطا")
+        showToast(data.message, ToastStatusEnum.Error, "خطا");
       }
 
     } catch (err: any) {

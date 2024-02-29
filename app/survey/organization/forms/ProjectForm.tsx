@@ -9,16 +9,16 @@ const ProjectForm = (props: OrganizationFormProps) => {
             <SectionTitle title="شرح طرح" />
 
             <Input placeHolder="عنوان فرصت سرمایه گذاری"
-                defaultValue={props.data.IdeaTitle}
+                defaultValue={props.data.ideaTitle}
                 onChange={(e) =>
-                    handleOnOrganizationDataChange(props, 'IdeaTitle', e.target.value)} />
+                    handleOnOrganizationDataChange(props, 'ideaTitle', e.target.value)} />
 
 
             <TextArea
                 placeHolder="خلاصه طرح"
-                defaultValue={props.data.IdeaDescription}
+                defaultValue={props.data.ideaDescription}
                 maxLength={421}
-                onChange={(e) => handleOnOrganizationDataChange(props, 'IdeaDescription', e.target.value)}
+                onChange={(e) => handleOnOrganizationDataChange(props, 'ideaDescription', e.target.value)}
             />
         </>
     )

@@ -11,15 +11,15 @@ const IdeaForm = (props: TeamFormProps) => {
 
             <Input
                 placeHolder="عنوان طرح"
-                defaultValue={props.data.IdeaTitle}
-                onChange={(e) => handleOnTeamDataChange(props, 'IdeaTitle', e.target.value)}
+                defaultValue={props.data.ideaTitle}
+                onChange={(e) => handleOnTeamDataChange(props, 'ideaTitle', e.target.value)}
             />
 
             <TextArea
                 placeHolder="خلاصه طرح"
-                defaultValue={props.data.IdeaDescription}
+                defaultValue={props.data.ideaDescription}
                 maxLength={421}
-                onChange={(e) => handleOnTeamDataChange(props, 'IdeaDescription', e.target.value)}
+                onChange={(e) => handleOnTeamDataChange(props, 'ideaDescription', e.target.value)}
             />
         </>
     );

@@ -20,7 +20,7 @@ const Navbar = () => {
                         پیگیری
                     </Link>
 
-                    <Link href={""} className={`${router == "/edit" ? "active" : 'nav-link'}`} >
+                    <Link href={"/edit"} className={`${router == "/edit" ? "active" : 'nav-link'}`} >
                         ویرایش
                     </Link>
 

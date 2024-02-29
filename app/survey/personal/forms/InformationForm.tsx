@@ -1,6 +1,6 @@
 import Input from "@/app/components/inputs/Input";
 import SectionTitle from "../../components/SectionTitle";
-import { Dropdown } from "@/app/components/dropdowns/Dropdown";
+import Dropdown from "@/app/components/dropdowns/Dropdown";
 import { PersonalFormProps, handleOnPersonalDataChange } from "../../../utils/formUtils";
 
 const InformationForm = (props: PersonalFormProps) => {
@@ -27,24 +27,24 @@ const InformationForm = (props: PersonalFormProps) => {
             <SectionTitle title="مشخصات فردی" />
 
             <Input placeHolder="نام و نام خانوادگی"
-                defaultValue={props.data.AgentFullName}
-                onChange={(e) => handleOnPersonalDataChange(props, 'AgentFullName', e.target.value)} />
+                defaultValue={props.data.agentFullName}
+                onChange={(e) => handleOnPersonalDataChange(props, 'agentFullName', e.target.value)} />
 
             <Dropdown title="بازه سنی" options={ageOptions}
-                defaultValue={props.data.AgentAgeRange}
-                onSelectOption={(e) => handleOnPersonalDataChange(props, 'AgentAgeRange', e.label)} />
+                defaultValue={props.data.agentAgeRange}
+                onSelectOption={(e) => handleOnPersonalDataChange(props, 'agentAgeRange', e.label)} />
 
             <Dropdown title="مدرک تحصیلی" options={eduOptions}
-                defaultValue={props.data.AgentDegree}
-                onSelectOption={(e) => handleOnPersonalDataChange(props, 'AgentDegree', e.label)} />
+                defaultValue={props.data.agentDegree}
+                onSelectOption={(e) => handleOnPersonalDataChange(props, 'agentDegree', e.label)} />
 
             <Input placeHolder="شماره همراه" maxLength={11}
-                defaultValue={props.data.AgentPhoneNumber}
-                onChange={(e) => handleOnPersonalDataChange(props, 'AgentPhoneNumber', e.target.value)} />
+                defaultValue={props.data.agentPhoneNumber}
+                onChange={(e) => handleOnPersonalDataChange(props, 'agentPhoneNumber', e.target.value)} />
 
             <Input placeHolder="ایمیل (اختیاری)"
-                defaultValue={props.data.Email}
-                onChange={(e) => handleOnPersonalDataChange(props, 'Email', e.target.value)}
+                defaultValue={props.data.email}
+                onChange={(e) => handleOnPersonalDataChange(props, 'email', e.target.value)}
             />
         </>
     )

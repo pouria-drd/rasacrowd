@@ -59,12 +59,12 @@ const SectionsManager = (props: SectionsManagerProps) => {
 
             <div className="flex items-center justify-between">
                 {currentSectionIndex < props.sections.length - 1 ?
-                    <Button text="بعدی" onClick={handleNextSelection} /> :
-                    <Button text="ثبت" onClick={handleRegister} />
+                    <Button children="بعدی" onClick={handleNextSelection} /> :
+                    <Button children="ثبت" onClick={handleRegister} />
                 }
 
                 {currentSectionIndex > 0 &&
-                    <Button text="قبلی" type="outline" onClick={handlePreviousSelection} />
+                    <Button children="قبلی" type="outline" onClick={handlePreviousSelection} />
                 }
             </div>
         </>

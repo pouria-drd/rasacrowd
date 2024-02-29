@@ -1,6 +1,7 @@
 'use client';
 
 import { BASE_URL } from "@/app/config";
+import { useRouter } from "next/navigation";
 import { ReactNode, useState } from "react";
 import { useToast, ToastStatusEnum } from "@/app/components/Toast/ToastProvider";
 
@@ -14,30 +15,37 @@ import InformationForm from "./forms/InformationForm";
 import SectionsManager from "@/app/components/mangers/SectionsManager";
 
 
-const Team = () => {
+interface TeamPageProps {
+    data?: TeamProps;
+    isEdit?: boolean;
+}
+
+
+const Team = (props: TeamPageProps) => {
+    const router = useRouter();
     const { showToast } = useToast();
     const [trackingCode, setTrackingCode] = useState<string>('');
 
     const checkboxLabels = ["مشخصات", "ایده", "تولید", "بازار", "سرمایه", "ثبت"];
 
     const defaultDTO: TeamProps = {
-        JobTitle: '',
-        AgentFullName: '',
-        AgentPhoneNumber: '',
-        CaptchaCode: '',
-        CaptchaId: '',
-        DoneInvest: '',
-        Email: '',
-        IdeaDescription: '',
-        IdeaTitle: '',
-        MarketPoints: '',
-        MarketTarget: '',
-        MarketRivals: '',
-        ProductPhase: '',
-        RequestedInvest: '',
+        jobTitle: '',
+        agentFullName: '',
+        agentPhoneNumber: '',
+        captchaCode: '',
+        captchaId: '',
+        doneInvest: '',
+        email: '',
+        ideaDescription: '',
+        ideaTitle: '',
+        marketPoints: '',
+        marketTarget: '',
+        marketRivals: '',
+        productPhase: '',
+        requestedInvest: '',
     };
 
-    const [dto, setDTO] = useState<TeamProps>(defaultDTO);
+    const [dto, setDTO] = useState<TeamProps>(props.data ?? defaultDTO);
 
     const handleOnDataChange = (key: keyof TeamProps, value: string | undefined) => {
         setDTO((prevDTO) => {
@@ -51,14 +59,14 @@ const Team = () => {
 
     const handleRegister = async () => {
         try {
-            const url = BASE_URL + "survery/Team/new";
+            const url = BASE_URL + `survery/Team/${props.isEdit ? 'edit' : 'new'}`;
 
             const test = JSON.stringify(dto);
 
             console.log(test);
 
             const res = await fetch(url, {
-                method: 'POST',
+                method: `${props.isEdit ? 'PUT' : 'POST'}`,
                 body: test,
                 headers: {
                     'Content-Type': 'application/json',
@@ -67,11 +75,16 @@ const Team = () => {
 
             const data = await res.json();
             setTrackingCode(data.data);
+
             if (data.status) {
-                showToast(data.message, ToastStatusEnum.Success)
+                showToast(data.message, ToastStatusEnum.Success);
+
+                if (props.isEdit) {
+                    router.push("/")
+                }
             }
             else if (!data.status && data.message) {
-                showToast(data.message, ToastStatusEnum.Error, "خطا")
+                showToast(data.message, ToastStatusEnum.Error, "خطا");
             }
 
         } catch (err: any) {

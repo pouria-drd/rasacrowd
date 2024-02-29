@@ -21,7 +21,7 @@ const RegisterForm = (props: TeamFormProps) => {
             const data = await res.json();
 
             setCaptcha(data);
-            handleOnTeamDataChange(props, 'CaptchaId', data.id);
+            handleOnTeamDataChange(props, 'captchaId', data.id);
 
             if (data.message) {
                 showToast(data.message, ToastStatusEnum.Error, "خطا")
@@ -57,8 +57,8 @@ const RegisterForm = (props: TeamFormProps) => {
                     </button>
                 </div>
                 <Input placeHolder="عبارت امنیتی" maxLength={3}
-                    defaultValue={props.data.CaptchaCode}
-                    onChange={(e) => handleOnTeamDataChange(props, 'CaptchaCode', e.target.value)}
+                    defaultValue={props.data.captchaCode}
+                    onChange={(e) => handleOnTeamDataChange(props, 'captchaCode', e.target.value)}
                 />
             </div>
         </div>

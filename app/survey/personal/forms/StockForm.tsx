@@ -8,12 +8,12 @@ const StockForm = (props: PersonalFormProps) => {
             <SectionTitle title="سرمایه موردنیاز" />
 
             <Input placeHolder="میزان سرمایه اولیه شما"
-                defaultValue={props.data.DoneInvest}
-                onChange={(e) => handleOnPersonalDataChange(props, 'DoneInvest', e.target.value)} />
+                defaultValue={props.data.doneInvest}
+                onChange={(e) => handleOnPersonalDataChange(props, 'doneInvest', e.target.value)} />
 
             <Input placeHolder="میزان سرمایه درخواستی از سرمایه گذار"
-                defaultValue={props.data.RequestedInvest}
-                onChange={(e) => handleOnPersonalDataChange(props, 'RequestedInvest', e.target.value)} />
+                defaultValue={props.data.requestedInvest}
+                onChange={(e) => handleOnPersonalDataChange(props, 'requestedInvest', e.target.value)} />
         </>
     )
 }

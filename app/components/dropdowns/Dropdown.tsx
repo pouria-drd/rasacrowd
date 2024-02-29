@@ -16,7 +16,7 @@ interface DropdownProps {
     defaultValue?: string; // Default selected option
 }
 
-export const Dropdown = (props: DropdownProps) => {
+const Dropdown = (props: DropdownProps) => {
     // State to track the dropdown's visibility.
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -85,8 +85,8 @@ export const Dropdown = (props: DropdownProps) => {
     }, [props.defaultValue])
 
     return (
-        <div ref={dropdownRef} className="flex flex-col gap-2 
-        relative font-vazir">
+        <div ref={dropdownRef} className="flex flex-col
+        relative font-vazir w-full">
             <div onClick={handleOpen}
                 onBlur={() => { setIsOpen(false) }}
                 className={`bg-rasa-blue-25 transition-all cursor-pointer
@@ -130,3 +130,5 @@ export const Dropdown = (props: DropdownProps) => {
         </div>
     )
 }
+
+export default Dropdown

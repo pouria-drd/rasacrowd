@@ -8,14 +8,14 @@ const AssetForm = (props: OrganizationFormProps) => {
             <SectionTitle title="سرمایه" />
 
             <Input placeHolder="میزان سرمایه شما"
-                defaultValue={props.data.DoneInvest}
+                defaultValue={props.data.doneInvest}
                 onChange={(e) =>
-                    handleOnOrganizationDataChange(props, 'DoneInvest', e.target.value)} />
+                    handleOnOrganizationDataChange(props, 'doneInvest', e.target.value)} />
 
             <Input placeHolder="میزان سرمایه درخواستی از سرمایه گذار"
-                defaultValue={props.data.RequestedInvest}
+                defaultValue={props.data.requestedInvest}
                 onChange={(e) =>
-                    handleOnOrganizationDataChange(props, 'RequestedInvest', e.target.value)} />
+                    handleOnOrganizationDataChange(props, 'requestedInvest', e.target.value)} />
         </>
     )
 }

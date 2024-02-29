@@ -11,15 +11,15 @@ const IdeaForm = (props: PersonalFormProps) => {
 
             <Input
                 placeHolder="عنوان ایده"
-                defaultValue={props.data.IdeaTitle}
-                onChange={(e) => handleOnPersonalDataChange(props, 'IdeaTitle', e.target.value)}
+                defaultValue={props.data.ideaTitle}
+                onChange={(e) => handleOnPersonalDataChange(props, 'ideaTitle', e.target.value)}
             />
 
             <TextArea
                 placeHolder="خلاصه ایده"
-                defaultValue={props.data.IdeaDescription}
+                defaultValue={props.data.ideaDescription}
                 maxLength={421}
-                onChange={(e) => handleOnPersonalDataChange(props, 'IdeaDescription', e.target.value)}
+                onChange={(e) => handleOnPersonalDataChange(props, 'ideaDescription', e.target.value)}
             />
         </>
     );

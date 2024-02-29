@@ -1,6 +1,7 @@
 'use client';
 
 import { BASE_URL } from "@/app/config";
+import { useRouter } from "next/navigation";
 import { ReactNode, useState } from "react";
 import { useToast, ToastStatusEnum } from "@/app/components/Toast/ToastProvider";
 
@@ -14,31 +15,37 @@ import InformationForm from "./forms/InformationForm";
 import Alert from "@/app/components/alerts/Alert";
 import SectionsManager from "@/app/components/mangers/SectionsManager";
 
-const Personal = () => {
+interface PersonalPageProps {
+    data?: PersonalProps;
+    isEdit?: boolean;
+}
+
+const Personal = (props: PersonalPageProps) => {
+    const router = useRouter();
     const { showToast } = useToast();
 
     const checkboxLabels = ["مشخصات", "ایده", "تولید", "بازار", "سرمایه", "ثبت"];
 
     const defaultDTO: PersonalProps = {
-        AgentAgeRange: '',
-        AgentDegree: '',
-        AgentFullName: '',
-        AgentPhoneNumber: '',
-        CaptchaCode: '',
-        CaptchaId: '',
-        DoneInvest: '',
-        Email: '',
-        IdeaDescription: '',
-        IdeaTitle: '',
-        MarketPoints: '',
-        MarketTarget: '',
-        MarketRivals: '',
-        ProductPhase: '',
-        RequestedInvest: '',
+        agentAgeRange: '',
+        agentDegree: '',
+        agentFullName: '',
+        agentPhoneNumber: '',
+        captchaCode: '',
+        captchaId: '',
+        doneInvest: '',
+        email: '',
+        ideaDescription: '',
+        ideaTitle: '',
+        marketPoints: '',
+        marketTarget: '',
+        marketRivals: '',
+        productPhase: '',
+        requestedInvest: '',
     };
 
     const [trackingCode, setTrackingCode] = useState<string>('');
-    const [dto, setDTO] = useState<PersonalProps>(defaultDTO);
+    const [dto, setDTO] = useState<PersonalProps>(props.data ?? defaultDTO);
 
     const handleOnDataChange = (key: keyof PersonalProps, value: string | undefined) => {
         setDTO((prevDTO) => {
@@ -51,12 +58,12 @@ const Personal = () => {
 
     const handleRegister = async () => {
         try {
-            const url = BASE_URL + "survery/Personal/new";
+            const url = BASE_URL + `survery/Personal/${props.isEdit ? 'edit' : 'new'}`;
 
             const test = JSON.stringify(dto)
 
             const res = await fetch(url, {
-                method: 'POST',
+                method: `${props.isEdit ? 'PUT' : 'POST'}`,
                 body: test,
                 headers: {
                     'Content-Type': 'application/json',
@@ -69,6 +76,10 @@ const Personal = () => {
 
             if (data.status) {
                 showToast(data.message, ToastStatusEnum.Success)
+
+                if (props.isEdit) {
+                    router.push("/")
+                }
             }
             else if (!data.status && data.message) {
                 showToast(data.message, ToastStatusEnum.Error, "خطا")

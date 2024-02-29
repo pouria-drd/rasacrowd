@@ -8,16 +8,16 @@ const BazaarForm = (props: PersonalFormProps) => {
             <SectionTitle title="تحلیل بازار" />
 
             <TextArea placeHolder="مزایای رقابتی محصول"
-                defaultValue={props.data.MarketPoints}
-                onChange={(e) => handleOnPersonalDataChange(props, 'MarketPoints', e.target.value)} />
+                defaultValue={props.data.marketPoints}
+                onChange={(e) => handleOnPersonalDataChange(props, 'marketPoints', e.target.value)} />
 
             <TextArea placeHolder="بازار هدف (مشتریان)"
-                defaultValue={props.data.MarketTarget}
-                onChange={(e) => handleOnPersonalDataChange(props, 'MarketTarget', e.target.value)} />
+                defaultValue={props.data.marketTarget}
+                onChange={(e) => handleOnPersonalDataChange(props, 'marketTarget', e.target.value)} />
 
             <TextArea placeHolder="رقبای کلیدی داخلی و خارجی"
-                defaultValue={props.data.MarketRivals}
-                onChange={(e) => handleOnPersonalDataChange(props, 'MarketRivals', e.target.value)} />
+                defaultValue={props.data.marketRivals}
+                onChange={(e) => handleOnPersonalDataChange(props, 'marketRivals', e.target.value)} />
         </>
     )
 }

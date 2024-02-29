@@ -8,16 +8,16 @@ const BazaarForm = (props: TeamFormProps) => {
             <SectionTitle title="تحلیل بازار" />
 
             <TextArea placeHolder="مزایای رقابتی محصول"
-                defaultValue={props.data.MarketPoints}
-                onChange={(e) => handleOnTeamDataChange(props, 'MarketPoints', e.target.value)} />
+                defaultValue={props.data.marketPoints}
+                onChange={(e) => handleOnTeamDataChange(props, 'marketPoints', e.target.value)} />
 
             <TextArea placeHolder="بازار هدف (مشتریان)"
-                defaultValue={props.data.MarketTarget}
-                onChange={(e) => handleOnTeamDataChange(props, 'MarketTarget', e.target.value)} />
+                defaultValue={props.data.marketTarget}
+                onChange={(e) => handleOnTeamDataChange(props, 'marketTarget', e.target.value)} />
 
             <TextArea placeHolder="رقبای کلیدی داخلی و خارجی"
-                defaultValue={props.data.MarketRivals}
-                onChange={(e) => handleOnTeamDataChange(props, 'MarketRivals', e.target.value)} />
+                defaultValue={props.data.marketRivals}
+                onChange={(e) => handleOnTeamDataChange(props, 'marketRivals', e.target.value)} />
         </>
     )
 }

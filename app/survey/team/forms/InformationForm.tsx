@@ -8,20 +8,20 @@ const InformationForm = (props: TeamFormProps) => {
             <SectionTitle title="مشخصات کلی" />
 
             <Input placeHolder="نام شرکت یا کارگاه اقتصادی"
-                defaultValue={props.data.JobTitle}
-                onChange={(e) => handleOnTeamDataChange(props, 'JobTitle', e.target.value)} />
+                defaultValue={props.data.jobTitle}
+                onChange={(e) => handleOnTeamDataChange(props, 'jobTitle', e.target.value)} />
 
             <Input placeHolder="نام و نام خانوادگی مسئول پیگیری"
-                defaultValue={props.data.AgentFullName}
-                onChange={(e) => handleOnTeamDataChange(props, 'AgentFullName', e.target.value)} />
+                defaultValue={props.data.agentFullName}
+                onChange={(e) => handleOnTeamDataChange(props, 'agentFullName', e.target.value)} />
 
             <Input placeHolder="شماره همراه" maxLength={11}
-                defaultValue={props.data.AgentPhoneNumber}
-                onChange={(e) => handleOnTeamDataChange(props, 'AgentPhoneNumber', e.target.value)} />
+                defaultValue={props.data.agentPhoneNumber}
+                onChange={(e) => handleOnTeamDataChange(props, 'agentPhoneNumber', e.target.value)} />
 
             <Input placeHolder="ایمیل (اختیاری)"
-                defaultValue={props.data.Email}
-                onChange={(e) => handleOnTeamDataChange(props, 'Email', e.target.value)}
+                defaultValue={props.data.email}
+                onChange={(e) => handleOnTeamDataChange(props, 'email', e.target.value)}
             />
         </>
     )

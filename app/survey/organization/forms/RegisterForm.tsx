@@ -22,7 +22,7 @@ const RegisterForm = (props: OrganizationFormProps) => {
             const data = await res.json();
 
             setCaptcha(data);
-            handleOnOrganizationDataChange(props, 'CaptchaId', data.id);
+            handleOnOrganizationDataChange(props, 'captchaId', data.id);
 
             if (data.message) {
                 showToast(data.message, ToastStatusEnum.Error, "خطا")
@@ -58,8 +58,8 @@ const RegisterForm = (props: OrganizationFormProps) => {
                     </button>
                 </div>
                 <Input placeHolder="عبارت امنیتی" maxLength={3}
-                    defaultValue={props.data.CaptchaCode}
-                    onChange={(e) => handleOnOrganizationDataChange(props, 'CaptchaCode', e.target.value)}
+                    defaultValue={props.data.captchaCode}
+                    onChange={(e) => handleOnOrganizationDataChange(props, 'captchaCode', e.target.value)}
                 />
             </div>
         </div>

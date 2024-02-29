@@ -1,9 +1,12 @@
 'use client';
 
+import { ReactNode } from "react";
+
 interface ButtonProps {
-    text: string;
+    children: ReactNode;
     onClick: () => void;
-    type?: 'primary' | 'outline'
+    type?: 'primary' | 'outline';
+    disabled?: boolean;
 }
 
 const Button = (props: ButtonProps) => {
@@ -17,10 +20,11 @@ const Button = (props: ButtonProps) => {
 
     return (
         <button
-            onClick={props.onClick}
-            className={`${buttonStyle} transition-all rounded-lg px-6 py-2 w-fit`}>
+            onClick={props.onClick} disabled={props.disabled}
+            className={`${buttonStyle} disabled:cursor-not-allowed disabled:bg-opacity-70
+            transition-all rounded-lg px-6 py-2 w-fit`}>
 
-            {props.text}
+            {props.children}
 
         </button>
     );

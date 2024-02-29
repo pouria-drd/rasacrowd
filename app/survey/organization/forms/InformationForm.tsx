@@ -23,9 +23,9 @@ const InformationForm = (props: OrganizationFormProps) => {
                     handleOnOrganizationDataChange(props, 'officeBoss', e.target.value)} />
 
             <Input placeHolder="شماره همراه مسئول پیگیری" maxLength={11}
-                defaultValue={props.data.AgentPhoneNumber}
+                defaultValue={props.data.agentPhoneNumber}
                 onChange={(e) =>
-                    handleOnOrganizationDataChange(props, 'AgentPhoneNumber', e.target.value)} />
+                    handleOnOrganizationDataChange(props, 'agentPhoneNumber', e.target.value)} />
         </>
     )
 }

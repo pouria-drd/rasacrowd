@@ -8,12 +8,12 @@ const StockForm = (props: TeamFormProps) => {
             <SectionTitle title="سرمایه موردنیاز" />
 
             <Input placeHolder="میزان سرمایه اولیه شما"
-                defaultValue={props.data.DoneInvest}
-                onChange={(e) => handleOnTeamDataChange(props, 'DoneInvest', e.target.value)} />
+                defaultValue={props.data.doneInvest}
+                onChange={(e) => handleOnTeamDataChange(props, 'doneInvest', e.target.value)} />
 
             <Input placeHolder="میزان سرمایه درخواستی از سرمایه گذار"
-                defaultValue={props.data.RequestedInvest}
-                onChange={(e) => handleOnTeamDataChange(props, 'RequestedInvest', e.target.value)} />
+                defaultValue={props.data.requestedInvest}
+                onChange={(e) => handleOnTeamDataChange(props, 'requestedInvest', e.target.value)} />
         </>
     )
 }
