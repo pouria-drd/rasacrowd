@@ -8,7 +8,7 @@ import Input from "../components/inputs/Input";
 import Button from "../components/buttons/Button";
 import TrackingStatusCard from "../components/TrackingStatusCard";
 
-const tracking = () => {
+const Tracking = () => {
     const { showToast } = useToast();
     const [trackingCode, setTrackingCode] = useState<string>();
     const [isSendingData, setIsSendingData] = useState<boolean>(false);
@@ -73,4 +73,4 @@ const tracking = () => {
     )
 }
 
-export default tracking
+export default Tracking

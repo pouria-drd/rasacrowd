@@ -75,8 +75,6 @@ const Dropdown = (props: DropdownProps) => {
         if (props.defaultValue) {
             const relatedOption = props.options.find(x => x.label === props.defaultValue);
 
-            console.log(relatedOption);
-
             if (relatedOption) {
                 setSelectedOption(relatedOption);
             };

@@ -6,7 +6,7 @@ import Button from "../buttons/Button";
 import CheckboxGroup from "../checkbox/CheckboxGroup";
 
 interface SectionsManagerProps {
-    sections: ReactNode[];
+    children: ReactNode[];
     checkboxLabels: string[];
     isBusy: boolean;
     onRegister?: () => void;
@@ -15,13 +15,13 @@ interface SectionsManagerProps {
 
 const SectionsManager = (props: SectionsManagerProps) => {
     const [currentSectionIndex, setCurrentSectionIndex] = useState<number>(0);
-    const [selectedSection, setSelectedSection] = useState<ReactNode>(props.sections[0]);
+    const [selectedSection, setSelectedSection] = useState<ReactNode>(props.children[0]);
 
     const handleOnSelectionChange = (index: number) => {
-        setSelectedSection(props.sections[index]);
+        setSelectedSection(props.children[index]);
         setCurrentSectionIndex(index);
 
-        if (props.isOnLastForm && index === props.sections.length - 1) {
+        if (props.isOnLastForm && index === props.children.length - 1) {
             props.isOnLastForm();
         }
     }
@@ -29,8 +29,8 @@ const SectionsManager = (props: SectionsManagerProps) => {
     const handleNextSelection = () => {
         const nextIndex = currentSectionIndex + 1;
 
-        if (nextIndex <= props.sections.length) {
-            setSelectedSection(props.sections[nextIndex]);
+        if (nextIndex <= props.children.length) {
+            setSelectedSection(props.children[nextIndex]);
             setCurrentSectionIndex(nextIndex);
         }
     }
@@ -39,7 +39,7 @@ const SectionsManager = (props: SectionsManagerProps) => {
         const previousIndex = currentSectionIndex - 1;
 
         if (previousIndex >= 0) {
-            setSelectedSection(props.sections[previousIndex]);
+            setSelectedSection(props.children[previousIndex]);
             setCurrentSectionIndex(previousIndex);
         }
     }
@@ -64,13 +64,19 @@ const SectionsManager = (props: SectionsManagerProps) => {
             </div>
 
             <div className="flex items-center justify-between">
-                {currentSectionIndex < props.sections.length - 1 ?
-                    <Button children="بعدی" onClick={handleNextSelection} /> :
-                    <Button children="ثبت" onClick={handleRegister} isBusy={props.isBusy} />
+                {currentSectionIndex < props.children.length - 1 ?
+                    <Button onClick={handleNextSelection}>
+                        بعدی
+                    </Button> :
+                    <Button onClick={handleRegister} isBusy={props.isBusy} >
+                        ثبت
+                    </Button>
                 }
 
                 {currentSectionIndex > 0 &&
-                    <Button children="قبلی" type="outline" onClick={handlePreviousSelection} />
+                    <Button type="outline" onClick={handlePreviousSelection}>
+                        قبلی
+                    </Button>
                 }
             </div>
         </>

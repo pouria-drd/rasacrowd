@@ -97,11 +97,11 @@ const Organization = (props: OrganizationPageProps) => {
   }
 
   const sections: ReactNode[] = [
-    <InformationForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} />,
-    <ProjectForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} />,
-    <ProfitForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} />,
-    <AssetForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} />,
-    <RegisterForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} />,
+    <InformationForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} key={0} />,
+    <ProjectForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} key={1} />,
+    <ProfitForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} key={2} />,
+    <AssetForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} key={3} />,
+    <RegisterForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} key={4} />,
   ];
 
   useEffect(() => {
@@ -130,13 +130,13 @@ const Organization = (props: OrganizationPageProps) => {
             }
 
             <SectionsManager
-              sections={sections}
               isBusy={isSendingData}
               onRegister={handleRegister}
               checkboxLabels={checkboxLabels}
               isOnLastForm={() => setIsOnLastForm(true)}
-            />
-
+            >
+              {sections}
+            </SectionsManager>
           </>
           :
           <div className="flex items-center justify-center w-full h-[50vh]">

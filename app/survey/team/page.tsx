@@ -98,12 +98,12 @@ const Team = (props: TeamPageProps) => {
     }
 
     const sections: ReactNode[] = [
-        <InformationForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} />,
-        <IdeaForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} />,
-        <ProduceFrom data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} />,
-        <BazaarForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} />,
-        <StockForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} />,
-        <RegisterForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} />
+        <InformationForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} key={0} />,
+        <IdeaForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} key={1} />,
+        <ProduceFrom data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} key={2} />,
+        <BazaarForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} key={3} />,
+        <StockForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} key={4} />,
+        <RegisterForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} key={5} />
     ];
 
 
@@ -133,13 +133,13 @@ const Team = (props: TeamPageProps) => {
                         }
 
                         <SectionsManager
-                            sections={sections}
                             isBusy={isSendingData}
                             onRegister={handleRegister}
                             checkboxLabels={checkboxLabels}
                             isOnLastForm={() => setIsOnLastForm(true)}
-                        />
-
+                        >
+                            {sections}
+                        </SectionsManager>
                     </>
                     :
                     <div className="flex items-center justify-center w-full h-[50vh]">
