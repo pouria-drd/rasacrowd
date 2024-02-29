@@ -1,7 +1,7 @@
 'use client';
 
-import { ReactNode, useEffect, useState } from "react";
 import { BASE_URL } from "../config";
+import { ReactNode, useEffect, useState } from "react";
 import { useToast, ToastStatusEnum } from "@/app/components/Toast/ToastProvider";
 
 import Input from "../components/inputs/Input";
@@ -61,7 +61,6 @@ function Edit() {
 
 
     const handleData = (data: any) => {
-
         switch (selectedOption.value) {
             case 'Personal':
                 return <Personal data={data} isEdit={true} />

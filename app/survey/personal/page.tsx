@@ -116,6 +116,13 @@ const Personal = (props: PersonalPageProps) => {
                 !trackingCode ?
 
                     <>
+                        <Alert
+                            isClosable={true}
+                            title="توجه!"
+                            type="info"
+                            message="در هنگام وارد کردن شماره تماس یا عبارت امنیتی، حتما از صفحه کلید انگلیسی استفاده کنید."
+                        />
+
                         {
                             isDataEmpty && isOnLastForm &&
                             <Alert title="توجه" message="لطفا همه فیلد های الزامی را تکمیل کنید." type="error" />

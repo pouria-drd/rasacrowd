@@ -116,6 +116,7 @@ const Team = (props: TeamPageProps) => {
                 !trackingCode ?
                     <>
                         <Alert
+                            isClosable={true}
                             title="توجه!"
                             type="info"
                             message="در هنگام وارد کردن شماره تماس یا عبارت امنیتی، حتما از صفحه کلید انگلیسی استفاده کنید."

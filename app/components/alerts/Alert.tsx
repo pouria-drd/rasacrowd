@@ -1,7 +1,10 @@
-import { ReactNode } from "react";
+'use client';
+
+import { ReactNode, useState } from "react";
 
 import InfoIcon from "./icons/InfoIcon";
 import ErrorIcon from "./icons/ErrorIcon";
+import CloseIcon from "./icons/CloseIcon";
 import SuccessIcon from "./icons/SuccessIcon";
 import WarningIcon from "./icons/WarningIcon";
 
@@ -9,6 +12,7 @@ interface AlertProps {
     title: string;
     message: ReactNode | string;
     type: 'info' | 'success' | 'error' | 'warning';
+    isClosable?: boolean;
 }
 
 interface cardColorsProps {
@@ -22,6 +26,8 @@ interface cardTypeProps {
 }
 
 const Alert = (props: AlertProps) => {
+    const [isOpen, setIsOpen] = useState<boolean>(true);
+
     const { type = 'info' } = props;
 
     const icons = {
@@ -76,10 +82,18 @@ const Alert = (props: AlertProps) => {
 
     return (
         <div
-            className={`font-vazir border cursor-default
+            className={`${isOpen ? 'block' : 'hidden'}
+            font-vazir border cursor-default relative
             ${handleColor('bg')} ${handleColor("border")}
             flex flex-row-reverse items-center justify-end
             rounded-3xl shadow px-6 py-5`}>
+
+            {props.isClosable &&
+                <button onClick={() => setIsOpen(false)}
+                    className={`${handleColor("text")} absolute top-4 left-5`}>
+                    <CloseIcon />
+                </button>
+            }
 
             <div className="grid items-center grid-cols-12 w-full text-right r2l">
                 <div className={`flex items-center w-full h-full ${handleColor("text")}`}>
