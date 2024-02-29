@@ -1,8 +1,9 @@
+import { ReactNode } from "react";
+
 import InfoIcon from "./icons/InfoIcon";
 import ErrorIcon from "./icons/ErrorIcon";
 import SuccessIcon from "./icons/SuccessIcon";
 import WarningIcon from "./icons/WarningIcon";
-import { ReactNode } from "react";
 
 interface AlertProps {
     title: string;
@@ -89,9 +90,9 @@ const Alert = (props: AlertProps) => {
                     {props.title}
                 </h3>
 
-                <p className="text-sm text-gray-500 col-span-11 col-start-2 mr-2 sm:mr-0">
+                <div className="text-sm text-gray-500 col-span-11 col-start-2 mr-2 sm:mr-0">
                     {props.message}
-                </p>
+                </div>
             </div>
         </div>
     )

@@ -2,7 +2,7 @@ import Input from "@/app/components/inputs/Input";
 import SectionTitle from "../../components/SectionTitle";
 import { TeamFormProps, handleOnTeamDataChange } from "../../../utils/formUtils";
 
-const PersonalForm = (props: TeamFormProps) => {
+const InformationForm = (props: TeamFormProps) => {
     return (
         <>
             <SectionTitle title="مشخصات کلی" />
@@ -27,4 +27,4 @@ const PersonalForm = (props: TeamFormProps) => {
     )
 }
 
-export default PersonalForm
+export default InformationForm

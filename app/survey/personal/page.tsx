@@ -9,7 +9,7 @@ import StockForm from "./forms/StockForm";
 import BazaarForm from "./forms/BazaarForm";
 import ProduceFrom from "./forms/ProduceFrom";
 import RegisterForm from "./forms/RegisterForm";
-import PersonalInformationForm from "./forms/PersonalInformationForm";
+import InformationForm from "./forms/InformationForm";
 
 import Alert from "@/app/components/alerts/Alert";
 import SectionsManager from "@/app/components/mangers/SectionsManager";
@@ -79,7 +79,7 @@ const Personal = () => {
     }
 
     const sections: ReactNode[] = [
-        <PersonalInformationForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} />,
+        <InformationForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} />,
         <IdeaForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} />,
         <ProduceFrom data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} />,
         <BazaarForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} />,
@@ -111,7 +111,7 @@ const Personal = () => {
                     <div className="flex items-center justify-center w-full h-[50vh]">
                         <Alert title="عملیات موفقت آمیز بود" message={
                             <Test trackingCode={trackingCode} />
-                        } type="info" />
+                        } type="success" />
                     </div>
             }
         </div>

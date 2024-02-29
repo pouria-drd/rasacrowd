@@ -32,3 +32,19 @@ interface TeamProps {
     CaptchaId: string;
     CaptchaCode: string;
 }
+
+interface OrganizationProps {
+    AgentPhoneNumber: string;
+    investProfit: string;
+    officeBoss: string;
+    officeName: string;
+    publicProfit: string;
+    selfProfit: string;
+    yektaCode: string;
+    IdeaTitle: string;
+    IdeaDescription: string;
+    DoneInvest: string;
+    RequestedInvest: string;
+    CaptchaId: string;
+    CaptchaCode: string;
+}

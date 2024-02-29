@@ -1,6 +1,6 @@
 'use client';
-import { useEffect, useState, useId } from "react";
 
+import { useEffect, useState, useId } from "react";
 
 interface InputProps {
     placeHolder: string;
@@ -14,7 +14,6 @@ interface InputProps {
     getID?: (id: string) => void;
     onChange?: React.InputHTMLAttributes<HTMLInputElement>['onChange'];
 }
-
 
 const Input = ({ placeHolder, value, type = "text", defaultValue,
     hasError, maxLength, errorMessage, onChange, getID }: InputProps) => {
@@ -38,6 +37,8 @@ const Input = ({ placeHolder, value, type = "text", defaultValue,
     useEffect(() => {
         if (defaultValue) {
             setHasValue(true);
+        } else {
+            setHasValue(false);
         }
     }, [defaultValue]);
 

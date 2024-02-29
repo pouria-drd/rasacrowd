@@ -3,7 +3,7 @@ import SectionTitle from "../../components/SectionTitle";
 import { Dropdown } from "@/app/components/dropdowns/Dropdown";
 import { PersonalFormProps, handleOnPersonalDataChange } from "../../../utils/formUtils";
 
-const PersonalInformationForm = (props: PersonalFormProps) => {
+const InformationForm = (props: PersonalFormProps) => {
     const ageOptions: OptionProps[] = [
         { label: 'زیر 20 سال', value: 'زیر 20 سال' },
         { label: '20 تا 25سال', value: '20 تا 25سال' },
@@ -50,4 +50,4 @@ const PersonalInformationForm = (props: PersonalFormProps) => {
     )
 }
 
-export default PersonalInformationForm
+export default InformationForm

@@ -1,4 +1,5 @@
 'use client';
+
 import { BASE_URL } from "@/app/config";
 import { ReactNode, useState } from "react";
 import { useToast, ToastStatusEnum } from "@/app/components/Toast/ToastProvider";
@@ -9,7 +10,7 @@ import BazaarForm from "./forms/BazaarForm";
 import ProduceFrom from "./forms/ProduceFrom";
 import RegisterForm from "./forms/RegisterForm";
 import Alert from "@/app/components/alerts/Alert";
-import PersonalForm from "./forms/PersonalForm";
+import InformationForm from "./forms/InformationForm";
 import SectionsManager from "@/app/components/mangers/SectionsManager";
 
 
@@ -78,7 +79,7 @@ const Team = () => {
     }
 
     const sections: ReactNode[] = [
-        <PersonalForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} />,
+        <InformationForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} />,
         <IdeaForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} />,
         <ProduceFrom data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} />,
         <BazaarForm data={dto} onDataChange={(k, v) => handleOnDataChange(k, v)} />,
@@ -108,7 +109,7 @@ const Team = () => {
                     <div className="flex items-center justify-center w-full h-[50vh]">
                         <Alert title="عملیات موفقت آمیز بود" message={
                             <Test trackingCode={trackingCode} />
-                        } type="info" />
+                        } type="success" />
                     </div>
             }
         </div>

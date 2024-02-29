@@ -13,7 +13,7 @@ function Home() {
       <SurveyLinkCard title="پرسشنامه شرکت ها" href="/survey/team" badgeColor="blue"
         text="شرکت یا استارتاپ هایی که قصد توسعه محصولات یا خدمات خود را دارند." />
 
-      <SurveyLinkCard title="پرسشنامه ادارات" href="/" badgeColor="orange"
+      <SurveyLinkCard title="پرسشنامه ادارات" href="/survey/organization" badgeColor="orange"
         text="ادارات و سازمان های دولتی که طرحی برای فرصت های سرمایه گذاری دارند." />
 
       <Supporters />
