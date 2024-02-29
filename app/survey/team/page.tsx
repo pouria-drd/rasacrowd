@@ -27,6 +27,7 @@ const Team = (props: TeamPageProps) => {
     const [trackingCode, setTrackingCode] = useState<string>('');
     const [isDataEmpty, setIsDataEmpty] = useState<boolean>(false);
     const [isOnLastForm, setIsOnLastForm] = useState<boolean>(false);
+    const [isSendingData, setIsSendingData] = useState<boolean>(false);
 
     const checkboxLabels = ["مشخصات", "ایده", "تولید", "بازار", "سرمایه", "ثبت"];
 
@@ -59,6 +60,8 @@ const Team = (props: TeamPageProps) => {
     }
 
     const handleRegister = async () => {
+        setIsSendingData(true);
+
         try {
             const url = BASE_URL + `survery/Team/${props.isEdit ? 'edit' : 'new'}`;
 
@@ -90,6 +93,8 @@ const Team = (props: TeamPageProps) => {
 
         } catch (err: any) {
         }
+
+        setIsSendingData(false);
     }
 
     const sections: ReactNode[] = [
@@ -129,6 +134,7 @@ const Team = (props: TeamPageProps) => {
 
                         <SectionsManager
                             sections={sections}
+                            isBusy={isSendingData}
                             onRegister={handleRegister}
                             checkboxLabels={checkboxLabels}
                             isOnLastForm={() => setIsOnLastForm(true)}

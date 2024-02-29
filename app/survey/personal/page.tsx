@@ -26,6 +26,7 @@ const Personal = (props: PersonalPageProps) => {
     const { showToast } = useToast();
     const [isDataEmpty, setIsDataEmpty] = useState<boolean>(false);
     const [isOnLastForm, setIsOnLastForm] = useState<boolean>(false);
+    const [isSendingData, setIsSendingData] = useState<boolean>(false);
 
     const checkboxLabels = ["مشخصات", "ایده", "تولید", "بازار", "سرمایه", "ثبت"];
 
@@ -60,6 +61,8 @@ const Personal = (props: PersonalPageProps) => {
     }
 
     const handleRegister = async () => {
+        setIsSendingData(true);
+
         try {
             const url = BASE_URL + `survery/Personal/${props.isEdit ? 'edit' : 'new'}`;
 
@@ -90,6 +93,8 @@ const Personal = (props: PersonalPageProps) => {
 
         } catch (err: any) {
         }
+
+        setIsSendingData(false);
     }
 
     const sections: ReactNode[] = [
@@ -130,6 +135,7 @@ const Personal = (props: PersonalPageProps) => {
 
                         <SectionsManager
                             sections={sections}
+                            isBusy={isSendingData}
                             onRegister={handleRegister}
                             checkboxLabels={checkboxLabels}
                             isOnLastForm={() => setIsOnLastForm(true)}

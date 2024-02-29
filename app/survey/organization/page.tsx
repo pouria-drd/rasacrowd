@@ -25,6 +25,7 @@ const Organization = (props: OrganizationPageProps) => {
   const { showToast } = useToast();
   const [isDataEmpty, setIsDataEmpty] = useState<boolean>(false);
   const [isOnLastForm, setIsOnLastForm] = useState<boolean>(false);
+  const [isSendingData, setIsSendingData] = useState<boolean>(false);
 
   const [trackingCode, setTrackingCode] = useState<string>('');
 
@@ -58,6 +59,8 @@ const Organization = (props: OrganizationPageProps) => {
   };
 
   const handleRegister = async () => {
+    setIsSendingData(true);
+
     try {
       const url = BASE_URL + `survery/Organisation/${props.isEdit ? 'edit' : 'new'}`;
 
@@ -89,6 +92,8 @@ const Organization = (props: OrganizationPageProps) => {
 
     } catch (err: any) {
     }
+
+    setIsSendingData(false);
   }
 
   const sections: ReactNode[] = [
@@ -126,6 +131,7 @@ const Organization = (props: OrganizationPageProps) => {
 
             <SectionsManager
               sections={sections}
+              isBusy={isSendingData}
               onRegister={handleRegister}
               checkboxLabels={checkboxLabels}
               isOnLastForm={() => setIsOnLastForm(true)}

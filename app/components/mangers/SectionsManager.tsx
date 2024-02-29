@@ -8,6 +8,7 @@ import CheckboxGroup from "../checkbox/CheckboxGroup";
 interface SectionsManagerProps {
     sections: ReactNode[];
     checkboxLabels: string[];
+    isBusy: boolean;
     onRegister?: () => void;
     isOnLastForm?: () => void;
 }
@@ -65,7 +66,7 @@ const SectionsManager = (props: SectionsManagerProps) => {
             <div className="flex items-center justify-between">
                 {currentSectionIndex < props.sections.length - 1 ?
                     <Button children="بعدی" onClick={handleNextSelection} /> :
-                    <Button children="ثبت" onClick={handleRegister} />
+                    <Button children="ثبت" onClick={handleRegister} isBusy={props.isBusy} />
                 }
 
                 {currentSectionIndex > 0 &&
