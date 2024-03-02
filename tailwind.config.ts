@@ -16,7 +16,7 @@ const config: Config = {
 
       fontFamily: {
         peyda: 'Peyda',
-        tanha: 'vazir',
+        tanha: 'tanha',
         vazir: 'vazir',
         yekanX: 'IRANYekanX',
         iransans: 'iransans',
