@@ -20,7 +20,7 @@ import {
 
 function CustomRoutes() {
   return (
-    <div className="px-4 sm:px-20 md:px-40 lg:px-72">
+    <div className="px-5 sm:px-20 md:px-40 lg:px-72 xl:px-96">
       <Routes>
         {/* Public Routes */}
         <Route path={ROUTES.HOME} element={<HomePage />} />

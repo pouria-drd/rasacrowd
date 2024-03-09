@@ -49,11 +49,9 @@ const RegisterForm = (props: PersonalFormProps) => {
         >
           <div className="w-full py-2">
             <img
-              className="w-full h-10"
+              className="w-[120px] h-10"
               src={`data:image/*;base64,${captcha.captcha}`}
               alt="CaptchaImage"
-              width={10}
-              height={10}
             />
           </div>
           <button

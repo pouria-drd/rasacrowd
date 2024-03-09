@@ -7,7 +7,7 @@ const Navbar = () => {
         <nav className="glass font-vazir fixed z-[1000]
             bg-white bg-opacity-90
             text-sm text-gray-800
-            left-0 shadow-sm w-full px-4 sm:px-20 md:px-40 lg:px-72 py-4">
+            left-0 shadow-sm w-full px-5 sm:px-20 md:px-40 lg:px-72 xl:px-96 py-4">
 
             <div className='grid grid-cols-11 w-full'>
                 <div className="flex items-center justify-center gap-10 col-span-8 col-start-3">
