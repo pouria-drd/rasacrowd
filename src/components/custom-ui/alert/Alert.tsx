@@ -28,7 +28,7 @@ interface cardTypeProps {
 const Alert = (props: AlertProps) => {
     const [isOpen, setIsOpen] = useState<boolean>(true);
 
-    const { type = 'info' } = props;
+    // const { type = 'info' } = props;
 
     const icons = {
         'info': <InfoIcon />,
