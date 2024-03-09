@@ -1,0 +1,86 @@
+@import "tailwindcss/base";
+@import "tailwindcss/utilities";
+@import "tailwindcss/components";
+
+/* ---------------------------------------------------------------------- */
+/* Global */
+
+body {
+  background-color: white;
+}
+
+.glass {
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+}
+
+.r2l {
+  direction: rtl;
+}
+
+.l2r {
+  direction: ltr;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Scroll area */
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  cursor: pointer;
+  background: #999999;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  border-radius: 8px;
+  background: #268cad;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  border-radius: 8px;
+  background: #268cad;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Fonts area */
+
+@font-face {
+  font-family: "Vazir";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Vazir/Vazir-Regular-FD.woff") format("woff"),
+    url("../fonts/Vazir/Vazir-Regular-FD.woff2") format("woff2"),
+    url("../fonts/Vazir/Vazir-Regular-FD.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Vazir";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../fonts/Vazir/Vazir-Bold-FD.woff") format("woff"),
+    url("../fonts/Vazir/Vazir-Bold-FD.woff2") format("woff2"),
+    url("../fonts/Vazir/Vazir-Bold-FD.ttf") format("ttf");
+}
+
+/* ---------------------------------------------------------------------- */
+/* Input area */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #292f36;
+  box-shadow: 0 0 0px 1000px #f4f9ff inset;
+  transition: background-color 5000s ease-in-out 0s;
+  color: #f4f9ff;
+}
