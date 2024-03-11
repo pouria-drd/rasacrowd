@@ -46,6 +46,7 @@ export default {
 
           "purple": {
             100: "#C8C8E4",
+            300: "#6F6F9D",
             400: "#4D4E87",
           }
         },

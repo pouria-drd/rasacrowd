@@ -97,10 +97,10 @@ const Dropdown = (props: DropdownProps) => {
         }}
         className={`bg-rasa-blue-25 transition-all cursor-pointer
                 flex items-center justify-between group
-                rounded-lg border-2 hover:border-rasa-blue-250 
-                px-4 py-3 ${isOpen && "border-rasa-blue-250"}`}
+                rounded-lg hover:border-rasa-blue-250 
+                px-4 py-3 ${isOpen && "border-rasa-blue-250 border"}`}
       >
-        <ArrowUpIcon className={`${!isOpen && "rotate-180"} w-4 h-2`} />
+        <ArrowUpIcon className={`${!isOpen && "rotate-180"} w-4 h-2 ${!isOpen ? 'text-gray-300' : 'text-gray-600'}`} />
 
         <span
           className={`absolute -top-[14px] right-5
@@ -118,7 +118,7 @@ const Dropdown = (props: DropdownProps) => {
 
         <span
           className={`${selectedOption ? "text-gray-800" : "text-rasa-purple-100"
-            }`}
+            } r2l`}
         >
           {selectedOption ? selectedOption.label : "انتخاب کنید"}
         </span>
@@ -130,8 +130,8 @@ const Dropdown = (props: DropdownProps) => {
         style={{ height: isOpen ? `${contentHeight}px` : "0" }}
         className={`bg-rasa-blue-25 transition-all
                     flex flex-col 
-                    rounded-md overflow-hidden
-                    px-4 ${isOpen ? "border-2 pt-2 pb-3 mb-2" : ""}`}>
+                    rounded-md overflow-hidden r2l
+                    px-4 ${isOpen ? "pt-2 pb-3 mb-2" : ""}`}>
         {props.options.map((opt, idx) => (
           <Option
             onClick={(option) => {
