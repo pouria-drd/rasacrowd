@@ -8,6 +8,7 @@ import {
   NotFoundPage,
 
   TeamPage,
+  ServicePage,
   PersonalPage,
   OrganizationPage,
 
@@ -30,6 +31,7 @@ function CustomRoutes() {
         <Route path={ROUTES.TRACKING} element={<TrackingPage />} />
 
         <Route path={ROUTES.TEAM} element={<TeamPage />} />
+        <Route path={ROUTES.SERVICE} element={<ServicePage />} />
         <Route path={ROUTES.PERSONAL} element={<PersonalPage />} />
         <Route path={ROUTES.ORGANIZATION} element={<OrganizationPage />} />
 

@@ -27,6 +27,21 @@ export const handleOnTeamDataChange = (
     props.onDataChange(key, value);
 };
 
+// Service ----------------------------------------------------------------------
+
+export interface ServiceFormProps {
+    data: ServiceProps;
+    onDataChange: (key: keyof ServiceProps, value: string | undefined) => void;
+}
+
+export const handleOnServiceDataChange = (
+    props: ServiceFormProps,
+    key: keyof ServiceProps,
+    value: string | undefined
+) => {
+    props.onDataChange(key, value);
+};
+
 // Organization ----------------------------------------------------------------------
 
 export interface OrganizationFormProps {

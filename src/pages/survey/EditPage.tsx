@@ -8,6 +8,7 @@ import BaseCard from "../../components/custom-ui/card/BaseCard";
 import Dropdown from "../../components/custom-ui/dropdown/Dropdown";
 
 import TeamPage from "../survey/team/TeamPage";
+import ServicePage from "../survey/service/ServicePage";
 import PersonalPage from "../survey/personal/PersonalPage";
 import OrganizationPage from "../survey/organization/OrganizationPage";
 
@@ -24,6 +25,7 @@ function EditPage() {
         { label: 'فردی', value: 'Personal' },
         { label: 'شرکت ها', value: 'Team' },
         { label: 'ادارات', value: 'Organisation' },
+        { label: 'خدمات', value: 'Service' },
     ]
 
     const [selectedOption, setSelectedOption] = useState<OptionProps>(options[0]);
@@ -63,6 +65,8 @@ function EditPage() {
                 return <PersonalPage data={data} isEdit={true} />
             case 'Team':
                 return <TeamPage data={data} isEdit={true} />
+            case 'Service':
+                return <ServicePage data={data} isEdit={true} />
             case 'Organisation':
                 return <OrganizationPage data={data} isEdit={true} />
         }
@@ -84,22 +88,20 @@ function EditPage() {
         return (
             <BaseCard>
                 <div className="font-vazir
-            flex flex-col items-center justify-start gap-10 py-10">
+                    flex flex-col items-center justify-start gap-10 py-10">
                     <p className="text-rasa-blue-800 r2l w-full">
                         برای ویرایش پرسشنامه مورد نظر، شماره تلفن همراه و کد پیگیری خود را وارد کنید.
                     </p>
 
                     <div className="flex flex-col items-center justify-center gap-6 w-full">
-                        <Dropdown options={options} title="پرسشنامه" defaultOption={options[0]}
+                        <Dropdown options={options} title="پرسشنامه"
                             onSelectOption={(opt) => handleOnSelectOption(opt)} />
 
                         <Input placeHolder="شماره همراه" maxLength={11}
-                            onChange={(e) => setPhoneNumber(e.target.value)}
-                        />
+                            onChange={(e) => setPhoneNumber(e.target.value)} />
 
                         <Input placeHolder="کد پیگیری" maxLength={13}
-                            onChange={(e) => setUniqueID(e.target.value)}
-                        />
+                            onChange={(e) => setUniqueID(e.target.value)} />
                     </div>
 
                     <div className="flex items-center justify-start w-full">

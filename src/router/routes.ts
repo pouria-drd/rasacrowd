@@ -9,5 +9,6 @@ export const ROUTES = {
 
     TEAM: surveyRoute + "/team",
     PERSONAL: surveyRoute + "/personal",
+    SERVICE: surveyRoute + "/service",
     ORGANIZATION: surveyRoute + "/organization",
 };

@@ -18,6 +18,8 @@ function HomePage() {
             <SurveyLinkCard title="پرسشنامه ادارات" href="/survey/organization" badgeColor="orange"
                 text="ادارات و سازمان های دولتی که طرحی برای فرصت های سرمایه گذاری دارند." />
 
+            <SurveyLinkCard title="پرسشنامه خدمات" href={ROUTES.SERVICE} badgeColor="green"
+                text="خدماتی که قصد توسعه آن را دارید." />
             <Supporters />
         </BaseCard>
     )

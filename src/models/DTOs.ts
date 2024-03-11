@@ -33,6 +33,18 @@ interface TeamProps {
     captchaCode: string;
 }
 
+interface ServiceProps {
+    serviceTitle: string;
+    category: string;
+    agentPhoneNumber: string;
+    description: string;
+    email: string;
+    address: string;
+    site: string;
+    captchaId: string;
+    captchaCode: string;
+}
+
 interface OrganizationProps {
     agentPhoneNumber: string;
     investProfit: string;

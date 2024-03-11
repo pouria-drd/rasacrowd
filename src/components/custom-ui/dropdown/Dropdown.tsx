@@ -131,8 +131,7 @@ const Dropdown = (props: DropdownProps) => {
         className={`bg-rasa-blue-25 transition-all
                     flex flex-col 
                     rounded-md overflow-hidden
-                    px-4 ${isOpen ? "border-2 pt-2 pb-3 mb-2" : ""}`}
-      >
+                    px-4 ${isOpen ? "border-2 pt-2 pb-3 mb-2" : ""}`}>
         {props.options.map((opt, idx) => (
           <Option
             onClick={(option) => {
@@ -140,8 +139,7 @@ const Dropdown = (props: DropdownProps) => {
             }}
             option={opt}
             key={idx}
-            isActive={selectedOption === opt}
-          />
+            isActive={selectedOption === opt} />
         ))}
       </div>
     </div>
