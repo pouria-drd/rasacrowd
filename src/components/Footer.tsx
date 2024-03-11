@@ -21,13 +21,13 @@ const Footer = () => {
 
                     <div className="flex flex-col gap-4">
                         <div className="flex items-center justify-between">
-                            <a target="_blank" href="https://wa.me/+989964463019">
+                            <a className="hover:scale-105" target="_blank" href="https://wa.me/+989964463019">
                                 <WhatsAppIcon />
                             </a>
-                            <a target="_blank" href="https://instagram.com/rasacrowd">
+                            <a className="hover:scale-105" target="_blank" href="https://instagram.com/rasacrowd">
                                 <InstagramIcon />
                             </a>
-                            <a target="_blank" href="https://eitaa.com/rasacrowd">
+                            <a className="hover:scale-105" target="_blank" href="https://eitaa.com/rasacrowd">
                                 <EitaIcon />
                             </a>
                         </div>

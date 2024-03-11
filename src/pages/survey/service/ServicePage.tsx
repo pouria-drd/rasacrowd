@@ -26,7 +26,7 @@ function ServicePage(props: ServicePageProps) {
     const [isOnLastForm, setIsOnLastForm] = useState<boolean>(false);
     const [isSendingData, setIsSendingData] = useState<boolean>(false);
 
-    const checkboxLabels = ["مشخصات", "راه های", "ثبت"];
+    const checkboxLabels = ["مشخصات", "راه های ارتباطی", "ثبت"];
 
     const defaultDTO: ServiceProps = {
         serviceTitle: "",
