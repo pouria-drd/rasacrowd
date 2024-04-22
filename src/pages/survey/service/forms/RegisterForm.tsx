@@ -1,38 +1,36 @@
-import { useEffect, useState } from "react";
-import { BASE_URL } from "../../../../config";
+import { useEffect, useState } from 'react';
+import { BASE_URL } from '../../../../config';
 
-import {
-    handleOnServiceDataChange,
-    ServiceFormProps,
-} from "../../../../utils/formUtils";
+import { handleOnServiceDataChange, ServiceFormProps } from '../../../../utils/formUtils';
 
-import { useToast, ToastStatusEnum } from "../../../../components/custom-ui/toast/ToastProvider";
+import { useToast, ToastStatusEnum } from '../../../../components/custom-ui/toast/ToastProvider';
 
-import Input from "../../../../components/custom-ui/input/Input";
-import RefreshIcon from "../../../../components/icons/RefreshIcon";
+import Input from '../../../../components/custom-ui/input/Input';
+import RefreshIcon from '../../../../components/icons/RefreshIcon';
+import ArrowPath from '../../../../components/icons/ArrowPath';
 
 const RegisterForm = (props: ServiceFormProps) => {
     const { showToast } = useToast();
     const [captcha, setCaptcha] = useState<CaptchaResponse>({
-        captcha: "",
-        id: "",
+        captcha: '',
+        id: '',
     });
 
     const requestCaptcha = async () => {
         try {
-            const url = BASE_URL + "auth/captcha";
+            const url = BASE_URL + 'auth/captcha';
 
-            const res = await fetch(url, { method: "GET" });
+            const res = await fetch(url, { method: 'GET' });
 
             const data = await res.json();
 
             setCaptcha(data);
-            handleOnServiceDataChange(props, "captchaId", data.id);
+            handleOnServiceDataChange(props, 'captchaId', data.id);
 
             if (data.message) {
-                showToast(data.message, ToastStatusEnum.Error, "خطا");
+                showToast(data.message, ToastStatusEnum.Error, 'خطا');
             }
-        } catch (err: any) { }
+        } catch (err: any) {}
     };
 
     useEffect(() => {
@@ -45,19 +43,24 @@ const RegisterForm = (props: ServiceFormProps) => {
                 <div
                     className="bg-rasa-blue-25 
                 flex items-center justify-between
-                border rounded shadow p-2 w-full sm:w-2/5 h-12 gap-2"
-                >
+                border rounded shadow p-2 w-full sm:w-2/5 h-12 gap-2">
                     <div className="w-full py-2">
-                        <img
-                            className="w-[120px] h-10"
-                            src={`data:image/*;base64,${captcha.captcha}`}
-                            alt="CaptchaImage"
-                        />
+                        {!captcha.captcha && (
+                            <div className="flex items-center justify-center w-[120px] h-10 bg-gray-200 rounded ">
+                                <ArrowPath className="animate-spin w-5 h-5 duration-1000" />
+                            </div>
+                        )}
+                        {captcha.captcha && (
+                            <img
+                                className="w-[120px] h-10"
+                                src={`data:image/*;base64,${captcha.captcha}`}
+                                alt="CaptchaImage"
+                            />
+                        )}
                     </div>
                     <button
                         onClick={requestCaptcha}
-                        className="text-rasa-blue-800 w-fit p-1"
-                    >
+                        className="text-rasa-blue-800 w-fit p-1">
                         <RefreshIcon />
                     </button>
                 </div>
@@ -65,9 +68,7 @@ const RegisterForm = (props: ServiceFormProps) => {
                     placeHolder="عبارت امنیتی"
                     maxLength={3}
                     defaultValue={props.data.captchaCode}
-                    onChange={(e) =>
-                        handleOnServiceDataChange(props, "captchaCode", e.target.value)
-                    }
+                    onChange={(e) => handleOnServiceDataChange(props, 'captchaCode', e.target.value)}
                 />
             </div>
         </div>

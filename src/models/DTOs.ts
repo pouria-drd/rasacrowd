@@ -35,9 +35,12 @@ interface TeamProps {
 
 interface ServiceProps {
     serviceTitle: string;
+    serviceManager: string;
     category: string;
     agentPhoneNumber: string;
     description: string;
+    serviceType: string;
+    activeYears: string;
     email: string;
     address: string;
     site: string;
