@@ -1,13 +1,13 @@
-import Supporters from '../components/Supporters';
-import SurveyLinkCard from '../components/SurveyLinkCard';
-import Banner from '../components/custom-ui/banner/Banner';
-import BaseCard from '../components/custom-ui/card/BaseCard';
-import { ROUTES } from '../router/routes';
+import { ROUTES } from "../router/routes";
+import Supporters from "../components/Supporters";
+import SurveyLinkCard from "../components/SurveyLinkCard";
+import BaseCard from "../components/custom-ui/card/BaseCard";
+import Poster from "../components/banners/rasa-poster/Poster";
 
 function HomePage() {
     return (
         <BaseCard>
-            <Banner />
+            <Poster />
 
             <SurveyLinkCard
                 title="پرسشنامه خدمات"

@@ -6,65 +6,107 @@
 /* Global */
 
 body {
-  background-color: white;
+    background-color: white;
 }
 
 .glass {
-  backdrop-filter: blur(20px) saturate(150%);
-  -webkit-backdrop-filter: blur(20px) saturate(150%);
+    backdrop-filter: blur(20px) saturate(150%);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
 }
 
 .r2l {
-  direction: rtl;
+    direction: rtl;
 }
 
 .l2r {
-  direction: ltr;
+    direction: ltr;
 }
 
 /* ---------------------------------------------------------------------- */
 /* Scroll area */
 
 ::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
-  cursor: pointer;
-  background: #999999;
+    width: 4px;
+    height: 4px;
+    cursor: pointer;
+    background: #999999;
 }
 
 ::-webkit-scrollbar-thumb:horizontal {
-  border-radius: 8px;
-  background: #268cad;
+    border-radius: 8px;
+    background: #268cad;
 }
 
 ::-webkit-scrollbar-thumb:vertical {
-  border-radius: 8px;
-  background: #268cad;
+    border-radius: 8px;
+    background: #268cad;
 }
 
 * {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 /* ---------------------------------------------------------------------- */
 /* Fonts area */
 
 @font-face {
-  font-family: "Vazir";
-  font-style: normal;
-  font-weight: normal;
-  src: url("../fonts/Vazir/Vazir-Regular-FD.woff") format("woff"),
-    url("../fonts/Vazir/Vazir-Regular-FD.woff2") format("woff2"),
-    url("../fonts/Vazir/Vazir-Regular-FD.ttf") format("ttf");
+    font-family: "Vazir";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/Vazir/Vazir-Regular-FD.woff") format("woff"),
+        url("../fonts/Vazir/Vazir-Regular-FD.woff2") format("woff2"),
+        url("../fonts/Vazir/Vazir-Regular-FD.ttf") format("ttf");
 }
 
 @font-face {
-  font-family: "Vazir";
-  font-style: normal;
-  font-weight: bold;
-  src: url("../fonts/Vazir/Vazir-Bold-FD.woff") format("woff"),
-    url("../fonts/Vazir/Vazir-Bold-FD.woff2") format("woff2"),
-    url("../fonts/Vazir/Vazir-Bold-FD.ttf") format("ttf");
+    font-family: "Vazir";
+    font-style: normal;
+    font-weight: bold;
+    src: url("../fonts/Vazir/Vazir-Bold-FD.woff") format("woff"),
+        url("../fonts/Vazir/Vazir-Bold-FD.woff2") format("woff2"),
+        url("../fonts/Vazir/Vazir-Bold-FD.ttf") format("ttf");
+}
+
+/* ---------------------------------------------------------------------- */
+/* Peyda area */
+
+@font-face {
+    font-family: "Peyda Medium";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/Peyda/01-Standard/TTF/Peyda-Medium.ttf")
+            format("truetype"),
+        url("../fonts/Peyda/woff/PeydaWeb-Medium.woff") format("woff"),
+        url("../fonts/Peyda/woff2/PeydaWeb-Medium.woff2") format("truetype");
+}
+
+@font-face {
+    font-family: "Peyda Regular";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/Peyda/01-Standard/TTF/Peyda-Regular.ttf")
+            format("truetype"),
+        url("../fonts/Peyda/woff/PeydaWeb-Regular.woff") format("woff"),
+        url("../fonts/Peyda/woff2/PeydaWeb-Regular.woff2") format("truetype");
+}
+
+@font-face {
+    font-family: "Peyda Regular";
+    font-style: normal;
+    font-weight: 600;
+    src: url("../fonts/Peyda/01-Standard/TTF/Peyda-SemiBold.ttf")
+            format("truetype"),
+        url("../fonts/Peyda/woff/PeydaWeb-SemiBold.woff") format("woff"),
+        url("../fonts/Peyda/woff2/PeydaWeb-SemiBold.woff2") format("truetype");
+}
+
+@font-face {
+    font-family: "Peyda Regular";
+    font-style: normal;
+    font-weight: bold;
+    src: url("../fonts/Peyda/01-Standard/TTF/Peyda-Bold.ttf") format("truetype"),
+        url("../fonts/Peyda/woff/PeydaWeb-Bold.woff") format("woff"),
+        url("../fonts/Peyda/woff2/PeydaWeb-Bold.woff2") format("truetype");
 }
 
 /* ---------------------------------------------------------------------- */
@@ -79,8 +121,8 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-text-fill-color: #292f36;
-  box-shadow: 0 0 0px 1000px #f4f9ff inset;
-  transition: background-color 5000s ease-in-out 0s;
-  color: #f4f9ff;
+    -webkit-text-fill-color: #292f36;
+    box-shadow: 0 0 0px 1000px #f4f9ff inset;
+    transition: background-color 5000s ease-in-out 0s;
+    color: #f4f9ff;
 }

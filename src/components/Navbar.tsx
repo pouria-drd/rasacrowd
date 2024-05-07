@@ -1,6 +1,6 @@
-import { ROUTES } from '../router/routes';
-import RasaIcon from './icons/RasaIcon.png';
-import { NavLink, Link } from 'react-router-dom';
+import { ROUTES } from "../router/routes";
+import RasaIcon from "./icons/RasaIcon.png";
+import { NavLink, Link } from "react-router-dom";
 
 const Navbar = () => {
     return (
@@ -11,9 +11,7 @@ const Navbar = () => {
             left-0 shadow-sm w-full px-5 sm:px-20 md:px-40 lg:px-72 xl:px-96 py-4">
             <div className="grid grid-cols-11 w-full">
                 <div className="flex items-center justify-center gap-4 md:gap-10 col-span-8 col-start-3">
-                    <NavLink
-                        to={ROUTES.TRACKING}
-                        className="nav-link">
+                    <NavLink to={ROUTES.TRACKING} className="nav-link">
                         پیگیری
                     </NavLink>
 
@@ -22,15 +20,11 @@ const Navbar = () => {
                         className="nav-link whitespace-nowrap">
                         جذب سرمایه
                     </NavLink>
-                    <NavLink
-                        to={ROUTES.EDIT}
-                        className="nav-link">
+                    <NavLink to={ROUTES.EDIT} className="nav-link">
                         ویرایش
                     </NavLink>
 
-                    <NavLink
-                        to={ROUTES.HOME}
-                        className="nav-link">
+                    <NavLink to={ROUTES.HOME} className="nav-link">
                         خانه
                     </NavLink>
                 </div>
