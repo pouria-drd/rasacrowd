@@ -21,7 +21,7 @@ const Poster2 = () => {
                 alt="hive1"
             />
             <img
-                className="absolute hidden sm:block w-60 bottom-0 left-0 fade -scale-x-100"
+                className="absolute hidden sm:block w-60 bottom-0 left-0 -scale-x-100"
                 src={hand}
                 alt="hand"
             />
