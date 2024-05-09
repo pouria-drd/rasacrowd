@@ -6,7 +6,7 @@ import "./rasa-poster.css";
 const Poster = () => {
     return (
         <section
-            className="text-white font-peyda
+            className="text-white font-peyda overflow-hidden
             flex flex-col items-center justify-start
             bg-gradient-to-bl
             from-[#0d456b] from-0% 
