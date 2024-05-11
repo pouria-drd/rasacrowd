@@ -33,7 +33,7 @@ const Poster2 = () => {
             <div className="text-right z-10 pl-4 pr-12 pt-24 w-full">
                 <h4 className="text-[#f6cf68] flash">اولین نمایشگاه تخصصی</h4>
                 <h1 className="text-2xl text-[#fdba13] font-bold w-full">
-                    خدمات دهندگان کسب و کار
+                    نمایشگاه خدمات دهندگان کسب و کار
                 </h1>
 
                 <ul className="font-vazir list-disc list-inside text-white text-xs r2l mt-1 marker:text-[#fdba13]">

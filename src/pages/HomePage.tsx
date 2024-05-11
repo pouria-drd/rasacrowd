@@ -35,13 +35,17 @@ function HomePage() {
 
                 <div className="absolute flex items-center justify-center gap-2 w-full bottom-3">
                     <button
-                        className={`bg-[#E0DDCF] rounded-full ${
-                            currentSlide === 0 ? "size-3" : "size-2"
+                        className={`rounded-full ${
+                            currentSlide === 0
+                                ? "bg-[#f47b20] size-3"
+                                : " bg-[#fdba13] size-2"
                         }`}
                         onClick={prevSlide}></button>
                     <button
-                        className={`bg-[#E0DDCF] rounded-full ${
-                            currentSlide === 1 ? "size-3" : "size-2"
+                        className={`rounded-full ${
+                            currentSlide === 1
+                                ? "bg-[#fdba13] size-3"
+                                : "bg-[#f47b20] size-2"
                         }`}
                         onClick={nextSlide}></button>
                 </div>
