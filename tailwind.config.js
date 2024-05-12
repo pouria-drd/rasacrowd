@@ -44,7 +44,9 @@ export default {
                     green: {
                         200: "#F6FFEC",
                         400: "#DCEDF0",
+                        500: "#C5F0EF",
                         600: "#679436",
+                        700: "#44CFCB",
                         800: "#1A6372",
                     },
 
@@ -56,6 +58,8 @@ export default {
 
                     gray: {
                         50: "#F9FBFD",
+                        800: "#E6ECF3",
+                        900: "#454749",
                     },
                 },
             },

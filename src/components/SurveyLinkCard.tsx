@@ -20,8 +20,8 @@ const SurveyLinkCard = ({
         <Link
             to={href}
             className="bg-rasa-blue-50 font-vazir hover:shadow-md transition-all
-        flex
-        rounded-md w-full p-4">
+            flex
+            rounded-md w-full p-4">
             <div className="flex flex-col items-center justify-end gap-2 w-full">
                 <div className="flex items-end justify-end gap-2 w-full">
                     <h3 className="text-base">{title}</h3>
