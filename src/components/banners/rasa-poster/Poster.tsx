@@ -1,9 +1,18 @@
+import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../../../router/routes";
+
 import graphics from "./images/graphics.png";
 import lineEffect from "./images/lineEffects.png";
 
 import "./rasa-poster.css";
 
 const Poster = () => {
+    const navigate = useNavigate();
+
+    const handleButtonClick = () => {
+        navigate(ROUTES.SERVICE);
+    };
+
     return (
         <section
             className="text-white font-peyda overflow-hidden
@@ -41,8 +50,9 @@ const Poster = () => {
                 </ul>
 
                 <button
+                    onClick={handleButtonClick}
                     className="bg-[#f47b20] hover:bg-[#0d456b] hover:text-[#f47b20] transition-all text-[#1e093f] 
-                        px-5 py-1 rounded-2xl mt-4 font-semibold flash">
+                        px-5 py-1 rounded-2xl mt-4 font-semibold animate-pulse duration-1000">
                     ثبت نام
                 </button>
             </div>

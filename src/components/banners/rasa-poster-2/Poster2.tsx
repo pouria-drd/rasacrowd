@@ -31,7 +31,9 @@ const Poster2 = () => {
                 alt="hive2"
             />
             <div className="text-right z-10 pl-4 pr-12 pt-24 w-full">
-                <h4 className="text-[#f6cf68] flash">اولین نمایشگاه تخصصی</h4>
+                <h4 className="text-[#f6cf68] animate-pulse duration-1000">
+                    اولین نمایشگاه تخصصی
+                </h4>
                 <h1 className="text-2xl text-[#fdba13] font-bold w-full">
                     نمایشگاه خدمات دهندگان کسب و کار
                 </h1>
