@@ -14,6 +14,7 @@ const SidebarLinkGroup = (sidebarLinkGroupProps: SidebarLinkGroupProps) => {
         { label: "ویرایش", link: ROUTES.EDIT },
         { label: "پیگیری", link: ROUTES.TRACKING },
         { label: "پرسشنامه ها", link: ROUTES.SURVEYS },
+        { label: "پرسشنامه خدمات دهندگان", link: ROUTES.SERVICE },
     ];
     const ref = useRef(null);
 

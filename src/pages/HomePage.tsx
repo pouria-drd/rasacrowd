@@ -1,10 +1,10 @@
 import { ROUTES } from "../router/routes";
 
 import Posters from "../components/Posters";
+import Shelf from "../components/shelf/Shelf";
 import Supporters from "../components/Supporters";
 import SurveyLinkCard from "../components/SurveyLinkCard";
 import BaseCard from "../components/custom-ui/card/BaseCard";
-import Shelf from "../components/shelf/Shelf";
 
 function HomePage() {
     return (
