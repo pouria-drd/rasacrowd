@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { BASE_URL } from "../config";
-import { useToast, ToastStatusEnum } from "../components/custom-ui/toast/ToastProvider";
-
+import {
+    useToast,
+    ToastStatusEnum,
+} from "../components/custom-ui/toast/ToastProvider";
 
 import Input from "../components/custom-ui/input/Input";
 import Button from "../components/custom-ui/button/Button";
-import BaseCard from "../components/custom-ui/card/BaseCard";
 import TrackingStatusCard from "../components/TrackingStatusCard";
-
 
 const TrackingPage = () => {
     const { showToast } = useToast();
@@ -24,7 +24,7 @@ const TrackingPage = () => {
             const res = await fetch(url, {
                 method: "GET",
                 headers: {
-                    'Content-Type': 'application/json',
+                    "Content-Type": "application/json",
                 },
             });
 
@@ -32,51 +32,58 @@ const TrackingPage = () => {
 
             if (data.type) {
                 switch (data.type) {
-                    case 'personal':
-                        setType('فردی')
+                    case "personal":
+                        setType("فردی");
                         break;
 
-                    case 'team':
-                        setType('شرکت ها')
+                    case "team":
+                        setType("شرکت ها");
                         break;
 
-                    case 'organazation':
-                        setType('ادارات')
+                    case "organazation":
+                        setType("ادارات");
                         break;
                 }
             }
 
             if (!res.ok) {
-                showToast("پرسشنامه ای یافت نشد!", ToastStatusEnum.Error, "خطا")
+                showToast(
+                    "پرسشنامه ای یافت نشد!",
+                    ToastStatusEnum.Error,
+                    "خطا"
+                );
             }
 
             setIsSendingData(false);
-        } catch (err: any) {
-        }
-    }
+        } catch (err: any) {}
+    };
 
     return (
-        <BaseCard>
-            <div className="font-vazir 
+        <div
+            className="font-vazir  
                 flex flex-col items-center justify-center gap-10 
-                w-full">
+                w-full h-full mt-44">
+            {!type ? (
+                <div className="flex flex-col items-end justify-center gap-4 w-full max-w-lg h-full">
+                    <Input
+                        maxLength={13}
+                        type="tel"
+                        placeHolder="کد پیگیری"
+                        onChange={(e) => setTrackingCode(e.target.value)}
+                    />
 
-                <Input maxLength={13}
-                    type="tel" placeHolder="کد پیگیری"
-                    onChange={(e) => setTrackingCode(e.target.value)} />
-
-                <div className="flex items-center justify-start w-full">
-                    <Button onClick={handleTracking} disabled={!trackingCode} isBusy={isSendingData}>
+                    <Button
+                        onClick={handleTracking}
+                        disabled={!trackingCode}
+                        isBusy={isSendingData}>
                         پیگیری
                     </Button>
                 </div>
+            ) : (
+                <TrackingStatusCard type={type} />
+            )}
+        </div>
+    );
+};
 
-                {type &&
-                    <TrackingStatusCard type={type} />
-                }
-            </div>
-        </BaseCard>
-    )
-}
-
-export default TrackingPage
+export default TrackingPage;

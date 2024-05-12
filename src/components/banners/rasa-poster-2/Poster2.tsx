@@ -19,16 +19,19 @@ const Poster2 = () => {
                 className="absolute w-fit h-full fade -left-32 sm:-left-40 top-0 opacity-50"
                 src={hive1}
                 alt="hive1"
+                loading="lazy"
             />
             <img
                 className="absolute hidden sm:block w-60 bottom-0 left-0 -scale-x-100"
                 src={hand}
                 alt="hand"
+                loading="lazy"
             />
             <img
                 className="absolute w-80 -top-10 -right-20 fade brightness-200"
                 src={hive2}
                 alt="hive2"
+                loading="lazy"
             />
             <div className="text-right z-10 pl-4 pr-12 pt-24 w-full">
                 <h4 className="text-[#f6cf68] animate-pulse duration-1000">

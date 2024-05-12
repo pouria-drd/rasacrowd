@@ -25,11 +25,13 @@ const Poster = () => {
                 className="absolute w-full h-full fade"
                 src={lineEffect}
                 alt="lineEffect"
+                loading="lazy"
             />
             <img
                 className="absolute hidden sm:block w-72 bottom-2 -left-8"
                 src={graphics}
                 alt="graphics"
+                loading="lazy"
             />
             <div className="text-[#f47b20] text-right z-10 pl-4 pr-12 pt-24 w-full">
                 <h4>فراخوان</h4>

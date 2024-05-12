@@ -1,24 +1,24 @@
 .active {
-  @apply border-b-2 border-rasa-blue-400;
+    @apply text-rasa-blue-700 font-bold;
 }
 
 .nav-link {
-  position: relative;
-  text-decoration: none;
+    position: relative;
+    text-decoration: none;
 }
 
 .nav-link::after {
-  left: 0;
-  width: 0;
-  bottom: -2px;
-  height: 1.5px;
-  content: "";
-  display: block;
-  position: absolute;
-  transition: width 0.15s ease;
+    left: 0;
+    width: 0;
+    bottom: -2px;
+    height: 1.5px;
+    content: "";
+    display: block;
+    position: absolute;
+    transition: width 0.15s ease;
 }
 
 .nav-link:hover::after {
-  width: 100%;
-  @apply bg-rasa-blue-400;
+    width: 100%;
+    @apply bg-rasa-blue-400;
 }

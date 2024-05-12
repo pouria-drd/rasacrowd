@@ -1,5 +1,5 @@
-import { ROUTES } from './routes';
-import { Route, Routes } from 'react-router-dom';
+import { ROUTES } from "./routes";
+import { Route, Routes } from "react-router-dom";
 // import { UserRolesEnum } from "../contexts/AuthContext";
 
 import {
@@ -12,62 +12,34 @@ import {
     OrganizationPage,
     EditPage,
     TrackingPage,
-} from '../pages';
-import SurveysPage from '../pages/survey/SurveysPage';
+} from "../pages";
+import SurveysPage from "../pages/survey/SurveysPage";
 
 // import PrivateRoute from "./PrivateRoute";
 
 function CustomRoutes() {
     return (
-        <div className="px-5 sm:px-20 md:px-40 lg:px-72 xl:px-96">
-            <Routes>
-                {/* Public Routes */}
-                <Route
-                    path={ROUTES.HOME}
-                    element={<HomePage />}
-                />
-                <Route
-                    path={ROUTES.SURVEYS}
-                    element={<SurveysPage />}
-                />
-                <Route
-                    path={ROUTES.NOT_FOUND_PAGE}
-                    element={<NotFoundPage />}
-                />
+        <Routes>
+            {/* Public Routes */}
+            <Route path={ROUTES.HOME} element={<HomePage />} />
+            <Route path={ROUTES.SURVEYS} element={<SurveysPage />} />
+            <Route path={ROUTES.NOT_FOUND_PAGE} element={<NotFoundPage />} />
 
-                <Route
-                    path={ROUTES.EDIT}
-                    element={<EditPage />}
-                />
-                <Route
-                    path={ROUTES.TRACKING}
-                    element={<TrackingPage />}
-                />
+            <Route path={ROUTES.EDIT} element={<EditPage />} />
+            <Route path={ROUTES.TRACKING} element={<TrackingPage />} />
 
-                <Route
-                    path={ROUTES.TEAM}
-                    element={<TeamPage />}
-                />
-                <Route
-                    path={ROUTES.SERVICE}
-                    element={<ServicePage />}
-                />
-                <Route
-                    path={ROUTES.PERSONAL}
-                    element={<PersonalPage />}
-                />
-                <Route
-                    path={ROUTES.ORGANIZATION}
-                    element={<OrganizationPage />}
-                />
+            <Route path={ROUTES.TEAM} element={<TeamPage />} />
+            <Route path={ROUTES.SERVICE} element={<ServicePage />} />
+            <Route path={ROUTES.PERSONAL} element={<PersonalPage />} />
+            <Route path={ROUTES.ORGANIZATION} element={<OrganizationPage />} />
 
-                {/* Auth pages */}
-                {/* <Route path={ROUTES.Login_User_PAGE} element={<LoginPage />} />
+            {/* Auth pages */}
+            {/* <Route path={ROUTES.Login_User_PAGE} element={<LoginPage />} />
       <Route path={ROUTES.Register_User_PAGE} element={<RegisterUserPage />} />
       <Route path={ROUTES.UNAUTHORIZED} element={<UnauthorizedPage />} /> */}
 
-                {/* Private Routes */}
-                {/* <Route
+            {/* Private Routes */}
+            {/* <Route
         path={ROUTES.DASHBOARD}
         element={
           <PrivateRoute
@@ -76,8 +48,7 @@ function CustomRoutes() {
           />
         }
       /> */}
-            </Routes>
-        </div>
+        </Routes>
     );
 }
 
