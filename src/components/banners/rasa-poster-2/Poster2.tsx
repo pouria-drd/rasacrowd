@@ -4,8 +4,6 @@ import hive1 from "./images/hive1.png";
 import hive2 from "./images/hive2.png";
 import location from "./images/location.png";
 
-import "./rasa-poster2.css";
-
 const Poster2 = () => {
     return (
         <section

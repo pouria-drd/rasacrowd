@@ -4,8 +4,6 @@ import { ROUTES } from "../../../router/routes";
 import graphics from "./images/graphics.png";
 import lineEffect from "./images/lineEffects.png";
 
-import "./rasa-poster.css";
-
 const Poster = () => {
     const navigate = useNavigate();
 

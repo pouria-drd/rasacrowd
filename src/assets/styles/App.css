@@ -22,3 +22,16 @@
     width: 100%;
     @apply bg-rasa-blue-400;
 }
+
+.fade {
+    animation: fadeIn var(--fade-duration, 1000ms) ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
